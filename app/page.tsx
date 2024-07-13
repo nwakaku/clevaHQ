@@ -39,16 +39,17 @@ export default function Home() {
       <section className="flex h-screen items-center justify-center bg-black ">
         <Image src={"/videobg.svg"} alt="smt" width={1500} height={1500} />
       </section>
-      <section className="flex flex-col items-end justify-center gap-4 min-h-svh ">
-        <div className="flex justify-between  w-full">
-          <h2 className={title({ size: "sm" })}>Reimagining Possibilities</h2>
-
-          <Button className="w-fit rounded-none bg-[#DBFB8E] text-black">
-            Contact Us
-          </Button>
-        </div>
+      <section className="flex flex-col items-end justify-center gap-4 min-h-svh space-y-10 ">
         <div>
-          <p>
+          <div className="flex justify-between  w-full">
+            <h2 className={title({ size: "sm" })}>Reimagining Possibilities</h2>
+
+            <Button className="w-fit rounded-none bg-[#DBFB8E] text-black">
+              Contact Us
+            </Button>
+          </div>
+
+          <p className="mt-6">
             At ClevaHQ, we’re more than a global UI/UX Design Agency. We’re
             technology pioneers, constantly exploring new frontiers like AI to
             redefine what’s achievable in design. Our diverse team of designers,
@@ -58,6 +59,59 @@ export default function Home() {
             technology and data to create digital experiences that are not only
             customized but also transformative.
           </p>
+        </div>
+        <div className="flex flex-wrap justify-between w-full border-t-2 border-b-2 border-gray-800 p-4 mt-8">
+          <div className="flex flex-col gap-4">
+            <h2>8+ </h2>
+            <p>Years of Expertise</p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h2>50+ </h2>
+            <p>Creative Pros</p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h2>150+ </h2>
+            <p>Projects Delivered</p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <h2>20+ </h2>
+            <p>Industries Serviced</p>
+          </div>
+        </div>
+        <div className="w-full flex flex-col ">
+          <h2 className="font-semibold text-2xl my-6">Services We Offer</h2>
+          <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700 p-3">
+            <div className="flex gap-10 items-center">
+              <p className="text-lime-300">01</p>
+              <p className="text-3xl">Branding</p>
+            </div>
+
+            <Image src={"/dummy.svg"} alt="ltv" width={50} height={50} />
+          </div>
+          <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700 p-3">
+            <div className="flex gap-10 items-center">
+              <p className="text-lime-300">02</p>
+              <p className="text-3xl">UI/UX Design</p>
+            </div>
+
+            <Image src={"/dummy.svg"} alt="ltv" width={50} height={50} />
+          </div>
+          <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700  p-3">
+            <div className="flex gap-10 items-center">
+              <p className="text-lime-300">03</p>
+              <p className="text-3xl">Development</p>
+            </div>
+
+            <Image src={"/dummy.svg"} alt="ltv" width={50} height={50} />
+          </div>
+          <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700  p-3">
+            <div className="flex gap-10 items-center">
+              <p className="text-lime-300">04</p>
+              <p className="text-3xl">Cybersecurity</p>
+            </div>
+
+            <Image src={"/dummy.svg"} alt="ltv" width={50} height={50} />
+          </div>
         </div>
       </section>
     </>
