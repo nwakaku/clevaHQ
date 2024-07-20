@@ -10,7 +10,9 @@ const Footer = () => {
         style={{ backgroundImage: `url('/limebg.svg')` }}
         className="py-20 text-black text-center flex flex-col items-center my-16">
         <div className="lg:w-1/3 flex flex-col space-y-8 items-center lg:px-0 px-4">
-          <h3 className="font-semibold text-4xl lg:text-5xl">Let’s build greatness!</h3>
+          <h3 className="font-semibold text-4xl lg:text-5xl">
+            Let’s build greatness!
+          </h3>
           <Link
             href="mailto:ClevaHQ@gmail.com"
             className="underline text-black">
@@ -18,7 +20,8 @@ const Footer = () => {
           </Link>
           <p>
             At ClevaHQ Agency, we understand that every business is unique.
-            That's why we offer tailored solutions that align with your goals.
+            That&apos;s why we offer tailored solutions that align with your
+            goals.
           </p>
           <Button className="w-fit rounded-none bg-green-900 py-2">
             Contact Us

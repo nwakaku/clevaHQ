@@ -250,8 +250,8 @@ export default function Home() {
             <h2 className={title({ size: "sm" })}>Why choose ClevaHQ</h2>
             <p className="text-sm">
               At ClevaHQ, we understand that running a business is more than
-              just managing tasks; it's about driving growth, fostering
-              innovation, and maintaining seamless operations. Here's why
+              just managing tasks; it&apos;s about driving growth, fostering
+              innovation, and maintaining seamless operations. Here&apos;s why
               ClevaHQ stands out as your ultimate business solution.
             </p>
           </div>

@@ -24,8 +24,8 @@ export default function AboutPage() {
           <div className="flex flex-col gap-3 flex-1">
             <div>
               <p>
-                Tell us about your project, We'd love to learn more about you
-                and what we can design and build together.
+                Tell us about your project, We&apos;d love to learn more about
+                you and what we can design and build together.
               </p>
             </div>
 
@@ -43,7 +43,9 @@ export default function AboutPage() {
           <Input radius="none" type="number" label="Phone Number" />
           <Input radius="none" type="text" label="Company name" />
           <Textarea placeholder="Type in your message" />
-          <Button className="rounded-none bg-[#DBFB8E] text-default-50">Send Message</Button>
+          <Button className="rounded-none bg-[#DBFB8E] text-default-50">
+            Send Message
+          </Button>
         </div>
       </section>
     </>

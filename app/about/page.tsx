@@ -51,15 +51,15 @@ export default function AboutPage() {
 
             <p>
               Our strength is in understanding the unique challenges faced by
-              businesses in today's fast-paced digital environment and providing
+              businesses in today&apos;s fast-paced digital environment and providing
               tailored and innovative strategies to help you thrive in a
               fiercely competitive market. {" "}
             </p>
             <p>
-              Working closely with our clients, we're committed to delivering
+              Working closely with our clients, we&apos;re committed to delivering
               measurable results. We offer comprehensive services including
               branding, product development, cybersecurity, and digital
-              marketing.  In essence, we're your one-stop vision partner,
+              marketing.  In essence, we&apos;re your one-stop vision partner,
               transforming your business ideas into successful digital
               realities.
             </p>
