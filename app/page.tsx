@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex py-4 lg:h-screen items-center justify-center bg-black ">
+      <section className="flex my-8 lg:h-screen items-center justify-center bg-black ">
         <Image src={"/videobg.svg"} alt="smt" width={1500} height={1500} />
       </section>
       <section className="flex flex-col items-end justify-center gap-4 min-h-svh mb-12 ">
@@ -137,10 +137,10 @@ export default function Home() {
             <h2>20+ </h2>
             <p>Industries Serviced</p>
           </div>
-          <Button className="w-full lg:hidden block rounded-none bg-[#DBFB8E] text-black">
-            Learn About Us
-          </Button>
         </div>
+        <Button className="w-full lg:hidden block rounded-none bg-[#DBFB8E] my-4 text-black">
+          Learn About Us
+        </Button>
         <div className="w-full flex flex-col ">
           <h2 className="font-semibold text-2xl my-6">Services We Offer</h2>
           <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700 p-3">
@@ -287,8 +287,8 @@ export default function Home() {
             </p>
             <p className="text-sm block lg:hidden">
               we aim to fulfill our mission and realize our vision, becoming the
-              go-to digital partner for businesses seeking to thrive in today's
-              dynamic business landscape.
+              go-to digital partner for businesses seeking to thrive in
+              today&apos;s dynamic business landscape.
             </p>
           </div>
           <div></div>
