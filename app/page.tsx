@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex lg:h-screen items-center justify-center bg-black ">
+      <section className="flex py-4 lg:h-screen items-center justify-center bg-black ">
         <Image src={"/videobg.svg"} alt="smt" width={1500} height={1500} />
       </section>
       <section className="flex flex-col items-end justify-center gap-4 min-h-svh mb-12 ">
@@ -104,7 +104,7 @@ export default function Home() {
           <div className="flex justify-between  w-full">
             <h2 className={title({ size: "sm" })}>Reimagining Possibilities</h2>
 
-            <Button className="w-fit rounded-none bg-[#DBFB8E] text-black">
+            <Button className="w-fit hidden lg:block rounded-none bg-[#DBFB8E] text-black">
               Contact Us
             </Button>
           </div>
@@ -120,7 +120,7 @@ export default function Home() {
             customized but also transformative.
           </p>
         </div>
-        <div className="flex flex-wrap justify-between w-full border-t-2 border-b-2 border-gray-800 p-4 mt-8">
+        <div className="flex flex-col lg:flex-row justify-between w-full border-t-2 border-b-2 border-gray-800 p-4 mt-8">
           <div className="flex flex-col gap-4">
             <h2>8+ </h2>
             <p>Years of Expertise</p>
@@ -137,6 +137,9 @@ export default function Home() {
             <h2>20+ </h2>
             <p>Industries Serviced</p>
           </div>
+          <Button className="w-full lg:hidden block rounded-none bg-[#DBFB8E] text-black">
+            Learn About Us
+          </Button>
         </div>
         <div className="w-full flex flex-col ">
           <h2 className="font-semibold text-2xl my-6">Services We Offer</h2>
@@ -146,7 +149,13 @@ export default function Home() {
               <p className="text-3xl">Branding</p>
             </div>
 
-            <Image src={"/dummy.svg"} alt="ltv" width={50} height={50} />
+            <Image
+              className="hidden lg:block"
+              src={"/dummy.svg"}
+              alt="ltv"
+              width={50}
+              height={50}
+            />
           </div>
           <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700 p-3">
             <div className="flex gap-10 items-center">
@@ -154,7 +163,13 @@ export default function Home() {
               <p className="text-3xl">UI/UX Design</p>
             </div>
 
-            <Image src={"/dummy.svg"} alt="ltv" width={50} height={50} />
+            <Image
+              className="hidden lg:block"
+              src={"/dummy.svg"}
+              alt="ltv"
+              width={50}
+              height={50}
+            />
           </div>
           <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700  p-3">
             <div className="flex gap-10 items-center">
@@ -162,7 +177,13 @@ export default function Home() {
               <p className="text-3xl">Development</p>
             </div>
 
-            <Image src={"/dummy.svg"} alt="ltv" width={50} height={50} />
+            <Image
+              className="hidden lg:block"
+              src={"/dummy.svg"}
+              alt="ltv"
+              width={50}
+              height={50}
+            />
           </div>
           <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700  p-3">
             <div className="flex gap-10 items-center">
@@ -170,7 +191,13 @@ export default function Home() {
               <p className="text-3xl">Cybersecurity</p>
             </div>
 
-            <Image src={"/dummy.svg"} alt="ltv" width={50} height={50} />
+            <Image
+              className="hidden lg:block"
+              src={"/dummy.svg"}
+              alt="ltv"
+              width={50}
+              height={50}
+            />
           </div>
         </div>
       </section>
@@ -180,12 +207,16 @@ export default function Home() {
             <h2 className={title({ size: "sm" })}>
               Our Expertise Extends Across Industries
             </h2>
-            <p className="text-sm">
+            <p className="text-sm hidden lg:block">
               The intersection of finance and innovation. It encompasses digital
               solutions transforming money management, payments, and
               investments. From mobile apps to blockchain, FinTech shapes the
               future of financial services. ClevaHQ, we craft user-centric
-              experiences for this dynamic industry. Let’s innovate together!
+              experiences for this dynamic industry. Let s innovate together!
+            </p>
+            <p className="text-sm lg:hidden block">
+              A full-service creative agency designing and building inventive
+              digital experiences across all platforms and brand touchpoints.
             </p>
           </div>
           <div></div>
@@ -248,11 +279,16 @@ export default function Home() {
         <div className="grid lg:grid-cols-2">
           <div className="flex flex-col gap-4 pb-10">
             <h2 className={title({ size: "sm" })}>Why choose ClevaHQ</h2>
-            <p className="text-sm">
+            <p className="text-sm hidden lg:block">
               At ClevaHQ, we understand that running a business is more than
               just managing tasks; it&apos;s about driving growth, fostering
               innovation, and maintaining seamless operations. Here&apos;s why
               ClevaHQ stands out as your ultimate business solution.
+            </p>
+            <p className="text-sm block lg:hidden">
+              we aim to fulfill our mission and realize our vision, becoming the
+              go-to digital partner for businesses seeking to thrive in today's
+              dynamic business landscape.
             </p>
           </div>
           <div></div>

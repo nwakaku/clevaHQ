@@ -36,6 +36,8 @@ const Footer = () => {
               ClevaHQ
             </div>
             <ul className=" flex flex-col justify-center items-center gap-4">
+              <li>Works</li>
+              <li>Clients</li>
               <li>Services</li>
               <li>About</li>
               <li>Contact</li>
