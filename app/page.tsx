@@ -1,10 +1,6 @@
 "use client";
 
 import { Link } from "@nextui-org/link";
-import { Snippet } from "@nextui-org/snippet";
-import { Code } from "@nextui-org/code";
-import { button as buttonStyles } from "@nextui-org/theme";
-
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { Button } from "@nextui-org/button";
@@ -12,9 +8,19 @@ import Image from "next/image";
 import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import type { Selection } from "@nextui-org/react";
-import React from "react";
+import React, { useEffect } from "react";
+import { TypeAnimation } from "react-type-animation";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import CountUp from "react-countup";
 
 export default function Home() {
+  useEffect(() => {
+    Aos.init({
+      disable: false,
+    });
+  }, []);
+
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set(["1"])
   );
@@ -69,14 +75,30 @@ export default function Home() {
         setWhyImage("/whychoos.svg");
     }
   };
-  
+
   return (
     <>
-      <section className="flex items-end justify-center gap-4 h-svh pb-10">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex items-end justify-center gap-4 h-svh pb-10">
         <div className="grid lg:grid-cols-2 items-start mb-10">
           <div className=" justify-center ">
             <h1 className={title({ size: "md" })}>
-              Empower & secure Your Digital Presence
+              <TypeAnimation
+                sequence={[
+                  // Same substring at the start will only be typed once, initially
+                  "Empower & secure Your Digital Presence",
+                  1000,
+                  "Empower & secure Your Digital Identity",
+                  1000,
+                ]}
+                speed={50}
+                repeat={Infinity}
+              />
             </h1>
           </div>
 
@@ -96,10 +118,14 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex my-8 lg:h-screen items-center justify-center bg-black ">
-        <Image src={"/videobg.svg"} alt="smt" width={1500} height={1500} />
-      </section>
-      <section className="flex flex-col items-end justify-center gap-4 min-h-svh mb-12 ">
+
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex flex-col items-end justify-center gap-4 min-h-svh mb-12 ">
         <div>
           <div className="flex justify-between  w-full">
             <h2 className={title({ size: "sm" })}>Reimagining Possibilities</h2>
@@ -122,26 +148,34 @@ export default function Home() {
         </div>
         <div className="flex flex-col lg:flex-row justify-between w-full border-t-2 border-b-2 border-gray-800 p-4 mt-8">
           <div className="flex flex-col gap-4">
-            <h2>8+ </h2>
+            <h2>
+              <CountUp duration={8} end={8} className="font-bold text-lg" />+
+            </h2>
             <p>Years of Expertise</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h2>50+ </h2>
+            <h2>
+              <CountUp duration={8} end={50} className="font-bold text-lg" />+{" "}
+            </h2>
             <p>Creative Pros</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h2>150+ </h2>
+            <h2>
+              <CountUp duration={8} end={150} className="font-bold text-lg" />+{" "}
+            </h2>
             <p>Projects Delivered</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h2>20+ </h2>
+            <h2>
+              <CountUp duration={8} end={20} className="font-bold text-lg" />+{" "}
+            </h2>
             <p>Industries Serviced</p>
           </div>
         </div>
         <Button className="w-full lg:hidden block rounded-none bg-[#DBFB8E] my-4 text-black">
           Learn About Us
         </Button>
-        <div className="w-full flex flex-col ">
+        <div className="w-full flex flex-col mt-10">
           <h2 className="font-semibold text-2xl my-6">Services We Offer</h2>
           <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700 p-3">
             <div className="flex gap-10 items-center">
@@ -201,7 +235,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-6 mb-12 p-4 ">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex flex-col gap-6 mb-12 p-4 ">
         <div className="grid lg:grid-cols-2">
           <div className="flex flex-col gap-4 pb-10">
             <h2 className={title({ size: "sm" })}>
@@ -255,6 +295,11 @@ export default function Home() {
         </div>
       </section>
       <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
         style={{ backgroundImage: `url('/limebg.svg')` }}
         className="py-10 text-black  grid lg:grid-cols-2 my-16">
         <div className="p-4 flex flex-col gap-4 justify-center text-center lg:text-left">
@@ -275,7 +320,13 @@ export default function Home() {
         </div>
         <div></div>
       </section>
-      <section className="flex flex-col gap-6 mb-12 p-4 ">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex flex-col gap-6 mb-12 p-4 ">
         <div className="grid lg:grid-cols-2">
           <div className="flex flex-col gap-4 pb-10">
             <h2 className={title({ size: "sm" })}>Why choose ClevaHQ</h2>
@@ -335,7 +386,13 @@ export default function Home() {
           <Image src={whyImage} alt="img" width={600} height={600} />
         </div>
       </section>
-      <section className="flex items-start justify-center gap-4 pb-10">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex items-start justify-center gap-4 pb-10">
         <div className="grid lg:grid-cols-2 items-start gap-4 w-full">
           <div className="inline-block max-w-lg justify-center flex-1">
             <h1 className={title({ size: "sm" })}>
@@ -382,7 +439,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col gap-10">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex flex-col gap-10">
         <div className="inline-block max-w-lg justify-center ">
           <h1 className={title({ size: "sm" })}>Latest Articles</h1>
         </div>
