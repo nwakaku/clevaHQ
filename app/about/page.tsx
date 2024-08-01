@@ -15,7 +15,13 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="flex items-end justify-center gap-4 h-svh pb-10">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex items-end justify-center gap-4 h-svh pb-36">
         <div className="grid lg:grid-cols-2 items-start">
           <div className=" max-w-lg justify-center flex-1">
             <h1 className={title({ size: "md" })}>About Us</h1>
@@ -35,7 +41,13 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="flex items-start justify-center pb-10">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex items-start justify-center pb-10">
         <div className="grid lg:grid-cols-2 items-start gap-4">
           <div className="inline-block max-w-lg justify-center flex-1">
             <h1 className={title({ size: "sm" })}>ClevaHQ</h1>
@@ -51,16 +63,16 @@ export default function AboutPage() {
 
             <p>
               Our strength is in understanding the unique challenges faced by
-              businesses in today&apos;s fast-paced digital environment and providing
-              tailored and innovative strategies to help you thrive in a
-              fiercely competitive market. {" "}
+              businesses in today&apos;s fast-paced digital environment and
+              providing tailored and innovative strategies to help you thrive in
+              a fiercely competitive market. {" "}
             </p>
             <p>
-              Working closely with our clients, we&apos;re committed to delivering
-              measurable results. We offer comprehensive services including
-              branding, product development, cybersecurity, and digital
-              marketing.  In essence, we&apos;re your one-stop vision partner,
-              transforming your business ideas into successful digital
+              Working closely with our clients, we&apos;re committed to
+              delivering measurable results. We offer comprehensive services
+              including branding, product development, cybersecurity, and
+              digital marketing.  In essence, we&apos;re your one-stop vision
+              partner, transforming your business ideas into successful digital
               realities.
             </p>
 
@@ -70,7 +82,13 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="flex items-start justify-center gap-4 pb-10">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex items-start justify-center gap-4 pb-10">
         <div className="grid lg:grid-cols-2 items-start gap-4 w-full">
           <div className="inline-block max-w-lg justify-center flex-1">
             <h1 className={title({ size: "sm" })}>Our Objective</h1>
@@ -116,7 +134,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="flex items-start justify-center gap-4 pb-10">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex items-start justify-center gap-4 pb-10">
         <div className="grid lg:grid-cols-2 items-start gap-4 w-full">
           <div className="inline-block max-w-lg justify-center flex-1">
             <h1 className={title({ size: "sm" })}>
@@ -165,7 +189,13 @@ export default function AboutPage() {
       </section>
 
       {/*  capacities  */}
-      <section className="flex flex-col items-start my-12 justify-center gap-6 pb-10">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex flex-col items-start my-12 justify-center gap-6 pb-10">
         <div className="inline-block max-w-lg  justify-center flex-1">
           <h1 className={title({ size: "sm" })}>Capabilities</h1>
         </div>

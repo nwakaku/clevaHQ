@@ -12,7 +12,7 @@ import React, { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import CountUp from "react-countup";
+import { CountUp } from "use-count-up";
 
 export default function Home() {
   useEffect(() => {
@@ -76,6 +76,10 @@ export default function Home() {
     }
   };
 
+  const onComplete = () => {
+    return { shouldRepeat: true, delay: 2 };
+  };
+
   return (
     <>
       <section
@@ -84,7 +88,7 @@ export default function Home() {
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-once="false"
-        className="flex items-end justify-center gap-4 h-svh pb-10">
+        className="flex items-end justify-center gap-4 h-svh pb-36">
         <div className="grid lg:grid-cols-2 items-start mb-10">
           <div className=" justify-center ">
             <h1 className={title({ size: "md" })}>
@@ -148,26 +152,49 @@ export default function Home() {
         </div>
         <div className="flex flex-col lg:flex-row justify-between w-full border-t-2 border-b-2 border-gray-800 p-4 mt-8">
           <div className="flex flex-col gap-4">
-            <h2>
-              <CountUp duration={8} end={8} className="font-bold text-lg" />+
+            <h2 className="font-bold text-lg">
+              <CountUp
+                isCounting
+                end={8}
+                duration={3.2}
+                onComplete={onComplete}
+              />
             </h2>
             <p>Years of Expertise</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h2>
-              <CountUp duration={8} end={50} className="font-bold text-lg" />+{" "}
+            <h2 className="font-bold text-lg">
+              <CountUp
+                isCounting
+                end={50}
+                duration={3.2}
+                onComplete={onComplete}
+              />
+              +{" "}
             </h2>
             <p>Creative Pros</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h2>
-              <CountUp duration={8} end={150} className="font-bold text-lg" />+{" "}
+            <h2 className="font-bold text-lg">
+              <CountUp
+                isCounting
+                end={150}
+                duration={3.2}
+                onComplete={onComplete}
+              />
+              +{" "}
             </h2>
             <p>Projects Delivered</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h2>
-              <CountUp duration={8} end={20} className="font-bold text-lg" />+{" "}
+            <h2 className="font-bold text-lg">
+              <CountUp
+                isCounting
+                end={20}
+                duration={3.2}
+                onComplete={onComplete}
+              />
+              +{" "}
             </h2>
             <p>Industries Serviced</p>
           </div>
@@ -241,7 +268,7 @@ export default function Home() {
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-once="false"
-        className="flex flex-col gap-6 mb-12 p-4 ">
+        className="flex flex-col gap-6 mb-12 p-4 bg-default-50">
         <div className="grid lg:grid-cols-2">
           <div className="flex flex-col gap-4 pb-10">
             <h2 className={title({ size: "sm" })}>
@@ -266,28 +293,49 @@ export default function Home() {
           <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
             <Accordion
               selectedKeys={selectedKeys}
+              hideIndicator={true}
               className="w-full"
               onSelectionChange={handleSelectionChange}>
               <AccordionItem key="1" aria-label="Accordion 1" title="FinTech">
-                <p className="text-sm">{defaultContent}</p>
+                <p className="text-sm">
+                  {
+                    "The intersection of finance and innovation. It encompasses digital solutions transforming money management, payments, and investments. From mobile apps to blockchain, FinTech shapes the future of financial services. ClevaHQ, we craft user-centric experiences for this dynamic industry. Let’s innovate together!"
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem key="2" aria-label="Accordion 2" title="EdTech">
-                <p className="text-sm">{defaultContent}</p>
+                <p className="text-sm">
+                  {
+                    " EdTech encompasses a wide range of tools, from virtual reality lessons to gamified classroom activities, making learning fun and accessible. At ClevaHQ, we focus on delivering the best to you."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="3"
                 aria-label="Accordion 3"
                 title="E-commerce">
-                <p className="text-sm">{defaultContent}</p>
+                <p className="text-sm">
+                  {
+                    "In the fast-paced world of online retail, having a robust e-commerce platform is essential for success. Our e-commerce solutions are designed to create seamless shopping experiences that drive sales and foster customer loyalty. We combine cutting-edge technology with user-centric design to build e-commerce websites that stand out in a competitive market."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="4"
                 aria-label="Accordion 4"
                 title="Healthcare">
-                <p className="text-sm">{defaultContent}</p>
+                <p className="text-sm">
+                  {
+                    "Elevating Healthcare Through Digital Excellence  Embracing the future of health with cutting-edge tech solutions, making medical journeys seamless for providers and patients alike."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem key="5" aria-label="Accordion 5" title="Logistics">
-                <p className="text-sm">{defaultContent}</p>
+                <p className="text-sm">
+                  {
+                    "Transforming Journeys in Freight & Logistics  Infusing Innovation and Efficiency into Logistics Solutions, Focusing on Real-Time Accessibility and User-Centric Design to Propel the Industry Forward."
+                  }
+                </p>
               </AccordionItem>
             </Accordion>
           </div>
@@ -326,7 +374,7 @@ export default function Home() {
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-once="false"
-        className="flex flex-col gap-6 mb-12 p-4 ">
+        className="flex flex-col gap-6 mb-12 p-4 bg-default-50">
         <div className="grid lg:grid-cols-2">
           <div className="flex flex-col gap-4 pb-10">
             <h2 className={title({ size: "sm" })}>Why choose ClevaHQ</h2>
@@ -349,37 +397,58 @@ export default function Home() {
           <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
             <Accordion
               selectedKeys={selectedKeys}
+              hideIndicator={true}
               className="w-full"
               onSelectionChange={handleSelectionChange}>
               <AccordionItem
                 key="1"
                 aria-label="Accordion 1"
                 title="Client-Centric Approach">
-                <p className="text-sm">{defaultContent}</p>
+                <p className="text-sm">
+                  {
+                    "At ClevaHQ, our clients are at the heart of everything we do. We tailor our solutions to meet your specific needs and ensure your satisfaction every step of the way."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="2"
                 aria-label="Accordion 2"
                 title="Innovative Solutions">
-                <p className="text-sm">{defaultContent}</p>
+                <p className="text-sm">
+                  {
+                    "We leverage cutting-edge technology and creative thinking to deliver innovative solutions that keep you ahead of the competition."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="3"
                 aria-label="Accordion 3"
                 title="Exceptional Quality">
-                <p className="text-sm">{defaultContent}</p>
+                <p className="text-sm">
+                  {
+                    "Quality is our top priority. We adhere to the highest standards to ensure that every project we deliver exceeds your expectations."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="4"
                 aria-label="Accordion 4"
                 title="Continuous Improvement">
-                <p className="text-sm">{defaultContent}</p>
+                <p className="text-sm">
+                  {
+                    "We believe in the power of continuous improvement. We regularly update our processes and technologies to provide you with the best possible outcomes."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="5"
                 aria-label="Accordion 5"
                 title="Agility and Adaptability">
-                <p className="text-sm">{defaultContent}</p>
+                <p className="text-sm">
+                  {
+                    "In a rapidly changing world, agility is key. We are flexible and adaptable, ready to pivot and adjust to meet your evolving needs."
+                  }
+                </p>
               </AccordionItem>
             </Accordion>
           </div>
@@ -402,6 +471,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
             <Accordion
+              hideIndicator={true}
               selectedKeys={selectedKeys}
               className="w-full"
               onSelectionChange={setSelectedKeys}>
@@ -409,31 +479,41 @@ export default function Home() {
                 key="1"
                 aria-label="Accordion 1"
                 title="What are your core services as an Agency">
-                {defaultContent}
+                {
+                  "Working closely with our clients, we're committed to delivering measurable results. We offer comprehensive services including branding, product development, cybersecurity.  In essence, we're your one-stop vision partner, transforming your business ideas into successful digital realities."
+                }
               </AccordionItem>
               <AccordionItem
                 key="2"
                 aria-label="Accordion 2"
                 title="Do you work with startups">
-                {defaultContent}
+                {
+                  "Absolutely! At ClevaHQ, we love working with startups. We understand the unique challenges and opportunities that come with starting a new business. Our team is dedicated to helping you build a strong brand, develop innovative products, and secure your digital presence from the ground up."
+                }
               </AccordionItem>
               <AccordionItem
                 key="3"
                 aria-label="Accordion 3"
                 title="How much do you charge for a project">
-                {defaultContent}
+                {
+                  "Our pricing is tailored to the specific needs and scope of each project. We offer competitive and transparent pricing to ensure you get the best value for your investment. To provide you with an accurate quote, we will discuss your project requirements in detail. Please contact us for a personalized consultation and pricing estimate."
+                }
               </AccordionItem>
               <AccordionItem
                 key="4"
                 aria-label="Accordion 4"
                 title="Do you accept redesign projects">
-                {defaultContent}
+                {
+                  "Yes, we do! Whether you need a complete overhaul of your existing brand or want to improve the functionality and aesthetics of your current digital products, ClevaHQ is here to help. We specialize in redesign projects and can provide fresh, innovative solutions to enhance your digital presence."
+                }
               </AccordionItem>
               <AccordionItem
                 key="5"
                 aria-label="Accordion 5"
                 title="What is your process for working with clients">
-                {defaultContent}
+                {
+                  "Working closely with our clients, we're committed to delivering measurable results. We offer comprehensive services including branding, product development, cybersecurity.  In essence, we're your one-stop vision partner, transforming your business ideas into successful digital realities."
+                }
               </AccordionItem>
             </Accordion>
           </div>
@@ -451,7 +531,10 @@ export default function Home() {
         </div>
         <div className="grid lg:grid-cols-3 sm:grid-cols-3 gap-10">
           {siteConfig.dummyFounders.map((item, index) => (
-            <Card shadow="sm" key={index} className="rounded-none bg-inherit">
+            <Card
+              shadow="sm"
+              key={index}
+              className="rounded-none bg-default-50">
               <CardBody className="overflow-visible p-3 ">
                 <Image
                   height={10}

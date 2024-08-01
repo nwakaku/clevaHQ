@@ -15,7 +15,13 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="flex items-end justify-center gap-4 h-svh pb-10">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex items-end justify-center gap-4 h-svh pb-36">
         <div className="grid lg:grid-cols-2 mb-10 items-start">
           <div className=" max-w-lg justify-center flex-1">
             <h1 className={title({ size: "md" })}>Contact Us</h1>

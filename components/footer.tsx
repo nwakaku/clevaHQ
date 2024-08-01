@@ -1,6 +1,6 @@
 import { Link } from "@nextui-org/link";
 import Image from "next/image";
-import navLogo from "../img/cleva.svg";
+// import navLogo from "../img/cleva.svg";
 import { Button } from "@nextui-org/button";
 
 const Footer = () => {
@@ -11,7 +11,7 @@ const Footer = () => {
         className="py-20 text-black text-center flex flex-col items-center my-16">
         <div className="lg:w-1/3 flex flex-col space-y-8 items-center lg:px-0 px-4">
           <h3 className="font-semibold text-4xl lg:text-5xl">
-            Let’s build greatness!
+            Let&apos;s build greatness!
           </h3>
           <Link
             href="mailto:ClevaHQ@gmail.com"
@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 items-stretch justify-stretch w-full">
           <div className="flex flex-col space-y-10 py-4  border-1 border-gray-700">
             <div className="flex items-center justify-center gap-3 border-gray-700 border-b-1 py-6 text-white font-bold">
-              <Image src={navLogo} alt="logo" width={25} height={25} />
+              <Image src={"/cleva.svg"} alt="logo" width={25} height={25} />
               ClevaHQ
             </div>
             <ul className=" flex flex-col justify-center items-center gap-4">

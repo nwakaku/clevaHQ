@@ -26,7 +26,7 @@ import {
   Logo,
 } from "@/components/icons";
 import Image from "next/image";
-import navLogo from '../img/cleva.svg'
+
 
 export const Navbar = () => {
   const searchInput = (
@@ -56,7 +56,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-4" href="/">
             {/* <Logo /> */}
-            <Image src={navLogo} width={30} height={30} alt="img" />
+            <Image src={'/cleva.svg'} width={30} height={30} alt="img" />
             <p className="font-bold text-inherit">ClevaHQ</p>
           </NextLink>
         </NavbarBrand>

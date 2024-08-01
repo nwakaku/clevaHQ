@@ -1,15 +1,28 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { title } from "@/components/primitives";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function AboutPage() {
+   useEffect(() => {
+     Aos.init({
+       disable: false,
+     });
+   }, []);
 
   return (
     <>
-      <section className="flex items-end justify-center gap-4 h-svh pb-10">
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex items-end justify-center gap-4 h-svh pb-36">
         <div className="grid lg:grid-cols-2 items-start mb-10">
           <div className=" max-w-lg justify-center">
             <h1 className={title({ size: "md" })}>What We Offer</h1>
@@ -29,7 +42,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <section className="flex items-start justify-center gap-4 pb-16">
+      <section className="flex items-start justify-center gap-4 p-4 mb-16 bg-default-50">
         <div className="grid lg:grid-cols-2 items-center justify-between gap-10 w-full  pb-10">
           <div className="flex flex-col gap-6 w-full justify-stretch">
             <div className="flex flex-col gap-6 w-full justify-stretch">
@@ -62,7 +75,7 @@ export default function AboutPage() {
           />
         </div>
       </section>
-      <section className="flex items-start justify-center gap-4 pb-16">
+      <section className="flex items-start justify-center gap-4 p-4 mb-16 bg-default-50">
         <div className="grid lg:grid-cols-2 items-center justify-between gap-10 w-full  pb-10">
           <div className="flex flex-col gap-6 w-full justify-stretch">
             <div className="flex flex-col gap-6 w-full justify-stretch">
@@ -96,7 +109,7 @@ export default function AboutPage() {
           />
         </div>
       </section>
-      <section className="flex items-start justify-center gap-4 pb-16">
+      <section className="flex items-start justify-center gap-4 p-4 mb-16 bg-default-50">
         <div className="grid lg:grid-cols-2 items-center justify-between gap-10 w-full  pb-10">
           <div className="flex flex-col gap-6 w-full justify-stretch">
             <div className="flex flex-col gap-6 w-full justify-stretch">
