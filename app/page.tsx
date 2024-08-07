@@ -91,30 +91,36 @@ export default function Home() {
         className="flex items-end justify-center gap-4 h-svh pb-36">
         <div className="grid lg:grid-cols-2 items-start mb-10">
           <div className=" justify-center ">
-            <h1 className={title({ size: "md" })}>
-              <TypeAnimation
-                sequence={[
-                  // Same substring at the start will only be typed once, initially
-                  "Empower & secure Your Digital Presence",
-                  1000,
-                  "Empower & secure Your Digital Identity",
-                  1000,
-                ]}
-                speed={50}
-                repeat={Infinity}
-              />
-            </h1>
+            <Card className="bg-transparent">
+              <CardBody>
+                <h1 className={title({ size: "md" })}>
+                  <TypeAnimation
+                    sequence={[
+                      // Same substring at the start will only be typed once, initially
+                      "Empower & secure Your Digital Presence",
+                      1000,
+                      "Empower & secure Your Digital Identity",
+                      1000,
+                    ]}
+                    speed={50}
+                    repeat={Infinity}
+                  />
+                </h1>
+              </CardBody>
+            </Card>
           </div>
 
-          <div className="flex flex-col gap-3 ">
-            <div>
-              <p>
-                Unlock the true potential of your brand at ClevaHQ. We
-                specialize in crafting enduring brand identities, designing
-                immersive UI/UX experiences, and seamlessly transforming ideas
-                into powerful digital solutions.
-              </p>
-            </div>
+          <div className="flex flex-col gap-3 text-white">
+            <Card className="bg-transparent">
+              <CardBody>
+                <p>
+                  Unlock the true potential of your brand at ClevaHQ. We
+                  specialize in crafting enduring brand identities, designing
+                  immersive UI/UX experiences, and seamlessly transforming ideas
+                  into powerful digital solutions.
+                </p>
+              </CardBody>
+            </Card>
 
             <Button className="w-fit rounded-none bg-[#DBFB8E] text-black">
               Contact Us
@@ -129,7 +135,7 @@ export default function Home() {
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-once="false"
-        className="flex flex-col items-end justify-center gap-4 min-h-svh mb-12 ">
+        className="flex flex-col items-end justify-center gap-4 min-h-svh ">
         <div>
           <div className="flex justify-between  w-full">
             <h2 className={title({ size: "sm" })}>Reimagining Possibilities</h2>
@@ -139,7 +145,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <p className="mt-6">
+          <p className="mt-6 text-[#848484]">
             At ClevaHQ, we’re more than a global UI/UX Design Agency. We’re
             technology pioneers, constantly exploring new frontiers like AI to
             redefine what’s achievable in design. Our diverse team of designers,
@@ -152,7 +158,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col lg:flex-row justify-between w-full border-t-2 border-b-2 border-gray-800 p-4 mt-8">
           <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-lg">
+            <h2 className="font-bold text-[36px]">
               <CountUp
                 isCounting
                 end={8}
@@ -160,10 +166,10 @@ export default function Home() {
                 onComplete={onComplete}
               />
             </h2>
-            <p>Years of Expertise</p>
+            <p className=" text-[#848484]">Years of Expertise</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-lg">
+            <h2 className="font-bold text-[36px]">
               <CountUp
                 isCounting
                 end={50}
@@ -172,10 +178,10 @@ export default function Home() {
               />
               +{" "}
             </h2>
-            <p>Creative Pros</p>
+            <p className=" text-[#848484]">Creative Pros</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-lg">
+            <h2 className="font-bold text-[36px]">
               <CountUp
                 isCounting
                 end={150}
@@ -184,10 +190,10 @@ export default function Home() {
               />
               +{" "}
             </h2>
-            <p>Projects Delivered</p>
+            <p className=" text-[#848484]">Projects Delivered</p>
           </div>
           <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-lg">
+            <h2 className="font-bold text-[36px]">
               <CountUp
                 isCounting
                 end={20}
@@ -196,18 +202,18 @@ export default function Home() {
               />
               +{" "}
             </h2>
-            <p>Industries Serviced</p>
+            <p className=" text-[#848484]">Industries Serviced</p>
           </div>
         </div>
         <Button className="w-full lg:hidden block rounded-none bg-[#DBFB8E] my-4 text-black">
           Learn About Us
         </Button>
-        <div className="w-full flex flex-col mt-10">
+        <div className="w-full flex flex-col mt-[100px]">
           <h2 className="font-semibold text-2xl my-6">Services We Offer</h2>
-          <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700 p-3">
+          <div className="w-full flex justify-between border-t-1 border-b-1 border-[#252525] p-3">
             <div className="flex gap-10 items-center">
-              <p className="text-lime-300">01</p>
-              <p className="text-3xl">Branding</p>
+              <p className="text-[#DBFB8E] font-semibold">01</p>
+              <p className="text-3xl text-[#848484] font-semibold">Branding</p>
             </div>
 
             <Image
@@ -218,10 +224,12 @@ export default function Home() {
               height={50}
             />
           </div>
-          <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700 p-3">
+          <div className="w-full flex justify-between border-t-1 border-b-1 border-[#252525] p-3">
             <div className="flex gap-10 items-center">
-              <p className="text-lime-300">02</p>
-              <p className="text-3xl">UI/UX Design</p>
+              <p className="text-[#DBFB8E] font-semibold">02</p>
+              <p className="text-3xl text-[#848484] font-semibold">
+                UI/UX Design
+              </p>
             </div>
 
             <Image
@@ -232,10 +240,12 @@ export default function Home() {
               height={50}
             />
           </div>
-          <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700  p-3">
+          <div className="w-full flex justify-between border-t-1 border-b-1 border-[#252525]  p-3">
             <div className="flex gap-10 items-center">
-              <p className="text-lime-300">03</p>
-              <p className="text-3xl">Development</p>
+              <p className="text-[#DBFB8E] font-semibold">03</p>
+              <p className="text-3xl text-[#848484] font-semibold">
+                Development
+              </p>
             </div>
 
             <Image
@@ -246,10 +256,12 @@ export default function Home() {
               height={50}
             />
           </div>
-          <div className="w-full flex justify-between border-t-1 border-b-1 border-gray-700  p-3">
+          <div className="w-full flex justify-between border-t-1 border-b-1 border-[#252525]  p-3">
             <div className="flex gap-10 items-center">
-              <p className="text-lime-300">04</p>
-              <p className="text-3xl">Cybersecurity</p>
+              <p className="text-[#DBFB8E] font-semibold">04</p>
+              <p className="text-3xl text-[#848484] font-semibold">
+                Cybersecurity
+              </p>
             </div>
 
             <Image
@@ -268,113 +280,7 @@ export default function Home() {
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-once="false"
-        className="flex flex-col gap-6 mb-12 p-4 bg-default-50">
-        <div className="grid lg:grid-cols-2">
-          <div className="flex flex-col gap-4 pb-10">
-            <h2 className={title({ size: "sm" })}>
-              Our Expertise Extends Across Industries
-            </h2>
-            <p className="text-sm hidden lg:block">
-              The intersection of finance and innovation. It encompasses digital
-              solutions transforming money management, payments, and
-              investments. From mobile apps to blockchain, FinTech shapes the
-              future of financial services. ClevaHQ, we craft user-centric
-              experiences for this dynamic industry. Let s innovate together!
-            </p>
-            <p className="text-sm lg:hidden block">
-              A full-service creative agency designing and building inventive
-              digital experiences across all platforms and brand touchpoints.
-            </p>
-          </div>
-          <div></div>
-        </div>
-
-        <div className="grid lg:grid-cols-2 items-start gap-4 w-full  pb-10">
-          <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
-            <Accordion
-              selectedKeys={selectedKeys}
-              hideIndicator={true}
-              className="w-full"
-              onSelectionChange={handleSelectionChange}>
-              <AccordionItem key="1" aria-label="Accordion 1" title="FinTech">
-                <p className="text-sm">
-                  {
-                    "The intersection of finance and innovation. It encompasses digital solutions transforming money management, payments, and investments. From mobile apps to blockchain, FinTech shapes the future of financial services. ClevaHQ, we craft user-centric experiences for this dynamic industry. Let’s innovate together!"
-                  }
-                </p>
-              </AccordionItem>
-              <AccordionItem key="2" aria-label="Accordion 2" title="EdTech">
-                <p className="text-sm">
-                  {
-                    " EdTech encompasses a wide range of tools, from virtual reality lessons to gamified classroom activities, making learning fun and accessible. At ClevaHQ, we focus on delivering the best to you."
-                  }
-                </p>
-              </AccordionItem>
-              <AccordionItem
-                key="3"
-                aria-label="Accordion 3"
-                title="E-commerce">
-                <p className="text-sm">
-                  {
-                    "In the fast-paced world of online retail, having a robust e-commerce platform is essential for success. Our e-commerce solutions are designed to create seamless shopping experiences that drive sales and foster customer loyalty. We combine cutting-edge technology with user-centric design to build e-commerce websites that stand out in a competitive market."
-                  }
-                </p>
-              </AccordionItem>
-              <AccordionItem
-                key="4"
-                aria-label="Accordion 4"
-                title="Healthcare">
-                <p className="text-sm">
-                  {
-                    "Elevating Healthcare Through Digital Excellence  Embracing the future of health with cutting-edge tech solutions, making medical journeys seamless for providers and patients alike."
-                  }
-                </p>
-              </AccordionItem>
-              <AccordionItem key="5" aria-label="Accordion 5" title="Logistics">
-                <p className="text-sm">
-                  {
-                    "Transforming Journeys in Freight & Logistics  Infusing Innovation and Efficiency into Logistics Solutions, Focusing on Real-Time Accessibility and User-Centric Design to Propel the Industry Forward."
-                  }
-                </p>
-              </AccordionItem>
-            </Accordion>
-          </div>
-          <Image src={currentImage} alt="img" width={600} height={600} />
-        </div>
-      </section>
-      <section
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-once="false"
-        style={{ backgroundImage: `url('/limebg.svg')` }}
-        className="py-10 text-black  grid lg:grid-cols-2 my-16">
-        <div className="p-4 flex flex-col gap-4 justify-center text-center lg:text-left">
-          <h2 className="font-semibold text-4xl lg:text-5xl">
-            Your one-stop vision partner
-          </h2>
-          <p>
-            ClevaHQ is a digital agency empowering visionary entrepreneurs,
-            startups, small businesses, and medium enterprises to launch, grow,
-            and scale their businesses from ideation to launch, and ultimately
-            market success.
-          </p>
-          <div>
-            <Link href="/about" className="underline-offset-1 text-center">
-              Get to know Us
-            </Link>
-          </div>
-        </div>
-        <div></div>
-      </section>
-      <section
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-once="false"
-        className="flex flex-col gap-6 mb-12 p-4 bg-default-50">
+        className="flex flex-col gap-6 mt-[100px] p-4 bg-[#0A0A0A]">
         <div className="grid lg:grid-cols-2">
           <div className="flex flex-col gap-4 pb-10">
             <h2 className={title({ size: "sm" })}>Why choose ClevaHQ</h2>
@@ -455,6 +361,112 @@ export default function Home() {
           <Image src={whyImage} alt="img" width={600} height={600} />
         </div>
       </section>
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex flex-col gap-6 mb-12 p-4 bg-[#0A0A0A] mt-[100px]">
+        <div className="grid lg:grid-cols-2">
+          <div className="flex flex-col gap-4 pb-10">
+            <h2 className={title({ size: "sm" })}>
+              Our Expertise Extends Across Industries
+            </h2>
+            <p className="text-sm hidden lg:block">
+              The intersection of finance and innovation. It encompasses digital
+              solutions transforming money management, payments, and
+              investments. From mobile apps to blockchain, FinTech shapes the
+              future of financial services. ClevaHQ, we craft user-centric
+              experiences for this dynamic industry. Let s innovate together!
+            </p>
+            <p className="text-sm lg:hidden block">
+              A full-service creative agency designing and building inventive
+              digital experiences across all platforms and brand touchpoints.
+            </p>
+          </div>
+          <div></div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 items-start gap-4 w-full  pb-10">
+          <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
+            <Accordion
+              selectedKeys={selectedKeys}
+              hideIndicator={true}
+              className="w-full"
+              onSelectionChange={handleSelectionChange}>
+              <AccordionItem key="1" aria-label="Accordion 1" title="FinTech">
+                <p className="text-sm">
+                  {
+                    "The intersection of finance and innovation. It encompasses digital solutions transforming money management, payments, and investments. From mobile apps to blockchain, FinTech shapes the future of financial services. ClevaHQ, we craft user-centric experiences for this dynamic industry. Let’s innovate together!"
+                  }
+                </p>
+              </AccordionItem>
+              <AccordionItem key="2" aria-label="Accordion 2" title="EdTech">
+                <p className="text-sm">
+                  {
+                    " EdTech encompasses a wide range of tools, from virtual reality lessons to gamified classroom activities, making learning fun and accessible. At ClevaHQ, we focus on delivering the best to you."
+                  }
+                </p>
+              </AccordionItem>
+              <AccordionItem
+                key="3"
+                aria-label="Accordion 3"
+                title="E-commerce">
+                <p className="text-sm">
+                  {
+                    "In the fast-paced world of online retail, having a robust e-commerce platform is essential for success. Our e-commerce solutions are designed to create seamless shopping experiences that drive sales and foster customer loyalty. We combine cutting-edge technology with user-centric design to build e-commerce websites that stand out in a competitive market."
+                  }
+                </p>
+              </AccordionItem>
+              <AccordionItem
+                key="4"
+                aria-label="Accordion 4"
+                title="Healthcare">
+                <p className="text-sm">
+                  {
+                    "Elevating Healthcare Through Digital Excellence  Embracing the future of health with cutting-edge tech solutions, making medical journeys seamless for providers and patients alike."
+                  }
+                </p>
+              </AccordionItem>
+              <AccordionItem key="5" aria-label="Accordion 5" title="Logistics">
+                <p className="text-sm">
+                  {
+                    "Transforming Journeys in Freight & Logistics  Infusing Innovation and Efficiency into Logistics Solutions, Focusing on Real-Time Accessibility and User-Centric Design to Propel the Industry Forward."
+                  }
+                </p>
+              </AccordionItem>
+            </Accordion>
+          </div>
+          <Image src={currentImage} alt="img" width={600} height={600} />
+        </div>
+      </section>
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        style={{ backgroundImage: `url('/bgImg.svg')` }}
+        className="py-10 text-white  flex mt-[100px] justify-center items-center">
+        <div className="p-4 flex flex-col gap-4 justify-center text-center w-1/2">
+          <h2 className="font-semibold text-4xl lg:text-5xl">
+            Your one-stop vision partner
+          </h2>
+          <p>
+            ClevaHQ is a digital agency empowering visionary entrepreneurs,
+            startups, small businesses, and medium enterprises to launch, grow,
+            and scale their businesses from ideation to launch, and ultimately
+            market success.
+          </p>
+          <div>
+            <Link href="/about" className="underline-offset-1 text-center">
+              Get to know Us
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section
         data-aos="fade-up"
         data-aos-offset="200"

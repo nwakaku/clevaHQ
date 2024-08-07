@@ -56,8 +56,8 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-4" href="/">
             {/* <Logo /> */}
-            <Image src={'/cleva.svg'} width={30} height={30} alt="img" />
-            <p className="font-bold text-inherit">ClevaHQ</p>
+            <Image src={'/clevaLogo.svg'} width={120} height={120} alt="img" />
+            
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
