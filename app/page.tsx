@@ -21,6 +21,41 @@ export default function Home() {
     });
   }, []);
 
+  const accordionItems = [
+    {
+      key: "1",
+      ariaLabel: "Accordion 1",
+      title: "Client-Centric Approach",
+      content:
+        "At ClevaHQ, our clients are at the heart of everything we do...",
+    },
+    {
+      key: "2",
+      ariaLabel: "Accordion 2",
+      title: "Innovative Solutions",
+      content: "We leverage cutting-edge technology and creative thinking...",
+    },
+    {
+      key: "3",
+      ariaLabel: "Accordion 3",
+      title: "Exceptional Quality",
+      content:
+        "Quality is our top priority. We adhere to the highest standards...",
+    },
+    {
+      key: "4",
+      ariaLabel: "Accordion 4",
+      title: "Continuous Improvement",
+      content: "We believe in the power of continuous improvement...",
+    },
+    {
+      key: "5",
+      ariaLabel: "Accordion 5",
+      title: "Agility and Adaptability",
+      content: "In a rapidly changing world, agility is key...",
+    },
+  ];
+
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set(["1"])
   );
@@ -284,13 +319,13 @@ export default function Home() {
         <div className="grid lg:grid-cols-2">
           <div className="flex flex-col gap-4 pb-10">
             <h2 className={title({ size: "sm" })}>Why choose ClevaHQ</h2>
-            <p className="text-sm hidden lg:block">
+            <p className="text-sm hidden lg:block text-[#848484]">
               At ClevaHQ, we understand that running a business is more than
               just managing tasks; it&apos;s about driving growth, fostering
               innovation, and maintaining seamless operations. Here&apos;s why
               ClevaHQ stands out as your ultimate business solution.
             </p>
-            <p className="text-sm block lg:hidden">
+            <p className="text-sm block lg:hidden text-[#848484]">
               we aim to fulfill our mission and realize our vision, becoming the
               go-to digital partner for businesses seeking to thrive in
               today&apos;s dynamic business landscape.
@@ -310,7 +345,7 @@ export default function Home() {
                 key="1"
                 aria-label="Accordion 1"
                 title="Client-Centric Approach">
-                <p className="text-sm">
+                <p className="text-sm text-[#848484]">
                   {
                     "At ClevaHQ, our clients are at the heart of everything we do. We tailor our solutions to meet your specific needs and ensure your satisfaction every step of the way."
                   }
@@ -320,7 +355,7 @@ export default function Home() {
                 key="2"
                 aria-label="Accordion 2"
                 title="Innovative Solutions">
-                <p className="text-sm">
+                <p className="text-sm text-[#848484]">
                   {
                     "We leverage cutting-edge technology and creative thinking to deliver innovative solutions that keep you ahead of the competition."
                   }
@@ -330,7 +365,7 @@ export default function Home() {
                 key="3"
                 aria-label="Accordion 3"
                 title="Exceptional Quality">
-                <p className="text-sm">
+                <p className="text-sm text-[#848484]">
                   {
                     "Quality is our top priority. We adhere to the highest standards to ensure that every project we deliver exceeds your expectations."
                   }
@@ -340,7 +375,7 @@ export default function Home() {
                 key="4"
                 aria-label="Accordion 4"
                 title="Continuous Improvement">
-                <p className="text-sm">
+                <p className="text-sm text-[#848484]">
                   {
                     "We believe in the power of continuous improvement. We regularly update our processes and technologies to provide you with the best possible outcomes."
                   }
@@ -350,7 +385,7 @@ export default function Home() {
                 key="5"
                 aria-label="Accordion 5"
                 title="Agility and Adaptability">
-                <p className="text-sm">
+                <p className="text-sm text-[#848484]">
                   {
                     "In a rapidly changing world, agility is key. We are flexible and adaptable, ready to pivot and adjust to meet your evolving needs."
                   }
@@ -361,7 +396,7 @@ export default function Home() {
           <Image src={whyImage} alt="img" width={600} height={600} />
         </div>
       </section>
-      <section
+      {/* <section
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-delay="50"
@@ -440,7 +475,7 @@ export default function Home() {
           </div>
           <Image src={currentImage} alt="img" width={600} height={600} />
         </div>
-      </section>
+      </section> */}
       <section
         data-aos="fade-up"
         data-aos-offset="200"
@@ -449,20 +484,20 @@ export default function Home() {
         data-aos-once="false"
         style={{ backgroundImage: `url('/bgImg.svg')` }}
         className="py-10 text-white  flex mt-[100px] justify-center items-center">
-        <div className="p-4 flex flex-col gap-4 justify-center text-center w-1/2">
+        <div className="p-4 flex flex-col gap-4 justify-center text-center lg:w-1/2">
           <h2 className="font-semibold text-4xl lg:text-5xl">
             Your one-stop vision partner
           </h2>
-          <p>
+          <p className="text-[#848484]">
             ClevaHQ is a digital agency empowering visionary entrepreneurs,
             startups, small businesses, and medium enterprises to launch, grow,
             and scale their businesses from ideation to launch, and ultimately
             market success.
           </p>
           <div>
-            <Link href="/about" className="underline-offset-1 text-center">
+            <Button className="bg-[#DBFB8E] text-black rounded-none">
               Get to know Us
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -473,7 +508,7 @@ export default function Home() {
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-once="false"
-        className="flex items-start justify-center gap-4 pb-10">
+        className="flex items-start justify-center gap-4 mt-[100px]">
         <div className="grid lg:grid-cols-2 items-start gap-4 w-full">
           <div className="inline-block max-w-lg justify-center flex-1">
             <h1 className={title({ size: "sm" })}>
@@ -491,41 +526,51 @@ export default function Home() {
                 key="1"
                 aria-label="Accordion 1"
                 title="What are your core services as an Agency">
-                {
-                  "Working closely with our clients, we're committed to delivering measurable results. We offer comprehensive services including branding, product development, cybersecurity.  In essence, we're your one-stop vision partner, transforming your business ideas into successful digital realities."
-                }
+                <p className="text-[#848484]">
+                  {
+                    "Working closely with our clients, we're committed to delivering measurable results. We offer comprehensive services including branding, product development, cybersecurity.  In essence, we're your one-stop vision partner, transforming your business ideas into successful digital realities."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="2"
                 aria-label="Accordion 2"
                 title="Do you work with startups">
-                {
-                  "Absolutely! At ClevaHQ, we love working with startups. We understand the unique challenges and opportunities that come with starting a new business. Our team is dedicated to helping you build a strong brand, develop innovative products, and secure your digital presence from the ground up."
-                }
+                <p className="text-[#848484]">
+                  {
+                    "Absolutely! At ClevaHQ, we love working with startups. We understand the unique challenges and opportunities that come with starting a new business. Our team is dedicated to helping you build a strong brand, develop innovative products, and secure your digital presence from the ground up."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="3"
                 aria-label="Accordion 3"
                 title="How much do you charge for a project">
-                {
-                  "Our pricing is tailored to the specific needs and scope of each project. We offer competitive and transparent pricing to ensure you get the best value for your investment. To provide you with an accurate quote, we will discuss your project requirements in detail. Please contact us for a personalized consultation and pricing estimate."
-                }
+                <p className="text-[#848484]">
+                  {
+                    "Our pricing is tailored to the specific needs and scope of each project. We offer competitive and transparent pricing to ensure you get the best value for your investment. To provide you with an accurate quote, we will discuss your project requirements in detail. Please contact us for a personalized consultation and pricing estimate."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="4"
                 aria-label="Accordion 4"
                 title="Do you accept redesign projects">
-                {
-                  "Yes, we do! Whether you need a complete overhaul of your existing brand or want to improve the functionality and aesthetics of your current digital products, ClevaHQ is here to help. We specialize in redesign projects and can provide fresh, innovative solutions to enhance your digital presence."
-                }
+                <p className="text-[#848484]">
+                  {
+                    "Yes, we do! Whether you need a complete overhaul of your existing brand or want to improve the functionality and aesthetics of your current digital products, ClevaHQ is here to help. We specialize in redesign projects and can provide fresh, innovative solutions to enhance your digital presence."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="5"
                 aria-label="Accordion 5"
                 title="What is your process for working with clients">
-                {
-                  "Working closely with our clients, we're committed to delivering measurable results. We offer comprehensive services including branding, product development, cybersecurity.  In essence, we're your one-stop vision partner, transforming your business ideas into successful digital realities."
-                }
+                <p className="text-[#848484]">
+                  {
+                    "Working closely with our clients, we're committed to delivering measurable results. We offer comprehensive services including branding, product development, cybersecurity.  In essence, we're your one-stop vision partner, transforming your business ideas into successful digital realities."
+                  }
+                </p>
               </AccordionItem>
             </Accordion>
           </div>
@@ -537,7 +582,7 @@ export default function Home() {
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-once="false"
-        className="flex flex-col gap-10">
+        className="flex flex-col gap-10 mt-[100px]">
         <div className="inline-block max-w-lg justify-center ">
           <h1 className={title({ size: "sm" })}>Latest Articles</h1>
         </div>
@@ -558,7 +603,7 @@ export default function Home() {
               </CardBody>
               <CardFooter className="flex flex-col items-start text-left space-y-3">
                 <p className="font-bold">{item.title}</p>
-                <p className="font-thin"> {item.piece}</p>
+                <p className="font-thin text-[#848484]"> {item.piece}</p>
                 <div className="flex items-center gap-3">
                   <Image
                     src={item.profilePic}

@@ -1,21 +1,22 @@
+"use client";
+
 import { Link } from "@nextui-org/link";
-import Image from "next/image";
-// import navLogo from "../img/cleva.svg";
 import { Button } from "@nextui-org/button";
+import { Image } from "@nextui-org/react";
 
 const Footer = () => {
   return (
     <>
       <div
-        style={{ backgroundImage: `url('/limebg.svg')` }}
-        className="py-20 text-black text-center flex flex-col items-center my-16">
+        style={{ backgroundImage: `url('/bgImg.svg')` }}
+        className="py-20 text-white text-center flex flex-col items-center mt-[100px]">
         <div className="lg:w-1/3 flex flex-col space-y-8 items-center lg:px-0 px-4">
           <h3 className="font-semibold text-4xl lg:text-5xl">
             Let&apos;s build greatness!
           </h3>
           <Link
             href="mailto:ClevaHQ@gmail.com"
-            className="underline text-black">
+            className="underline text-[#DBFB8E]">
             ClevaHQ@gmail.com
           </Link>
           <p>
@@ -23,21 +24,19 @@ const Footer = () => {
             That&apos;s why we offer tailored solutions that align with your
             goals.
           </p>
-          <Button className="w-fit rounded-none bg-green-900 py-2">
+          <Button className="w-fit rounded-none bg-[#DBFB8E] py-2 text-black">
             Contact Us
           </Button>
         </div>
       </div>
-      <footer className="w-full flex flex-col items-center justify-center py-3 text-gray-500 container mx-auto max-w-7xl px-6 flex-grow">
+      <footer className="w-full mt-[100px] flex flex-col items-center justify-center py-3 text-gray-500 container mx-auto max-w-7xl px-6 flex-grow">
         <div className="grid lg:grid-cols-4 items-stretch justify-stretch w-full">
           <div className="flex flex-col space-y-10 py-4  border-1 border-gray-700">
-            <div className="flex items-center justify-center gap-3 border-gray-700 border-b-1 py-6 text-white font-bold">
-              <Image src={"/cleva.svg"} alt="logo" width={25} height={25} />
-              ClevaHQ
+            <div className="flex items-center justify-center  border-gray-700 border-b-1 py-6 ">
+              <Image src={"/clevaLogo.svg"} alt="logo" width={120} />
             </div>
             <ul className=" flex flex-col justify-center items-center gap-4">
-              <li>Works</li>
-              <li>Clients</li>
+              
               <li>Services</li>
               <li>About</li>
               <li>Contact</li>
@@ -67,7 +66,7 @@ const Footer = () => {
           </div>
           <div className="border-1 border-gray-700">
             <div>
-              <ul>
+              <ul className="cursor-pointer">
                 <li className="py-3  border-b-1 border-gray-800 pl-8">
                   Twitter
                 </li>
@@ -83,13 +82,8 @@ const Footer = () => {
                 <li className="py-3  border-b-1 border-gray-800 pl-8">
                   Dribble
                 </li>
-                <li className="py-3  border-b-1 border-gray-800 pl-8">
-                  Facebook
-                </li>
-                <li className="py-3  border-b-1 border-gray-800 pl-8">
-                  Thread
-                </li>
-                <li className="py-3  border-gray-800 pl-8">Whatsapp</li>
+
+                <li className="py-3  border-gray-800 pl-8">Facebook</li>
               </ul>
             </div>
           </div>
