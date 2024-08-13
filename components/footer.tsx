@@ -31,8 +31,8 @@ const Footer = () => {
       </div>
       <footer className="w-full mt-[100px] flex flex-col items-center justify-center py-3 text-gray-500 container mx-auto max-w-7xl px-6 flex-grow">
         <div className="grid lg:grid-cols-4 items-stretch justify-stretch w-full">
-          <div className="flex flex-col space-y-10 py-4  border-1 border-gray-700">
-            <div className="flex items-center justify-center  border-gray-700 border-b-1 py-6 ">
+          <div className="flex flex-col space-y-10 py-4  border-1 border-[#252525]">
+            <div className="flex items-center justify-center  border-[#252525] border-b-1 py-6 ">
               <Image src={"/clevaLogo.svg"} alt="logo" width={120} />
             </div>
             <ul className=" flex flex-col justify-center items-center gap-4">
@@ -42,8 +42,8 @@ const Footer = () => {
               <li>Contact</li>
             </ul>
           </div>
-          <div className="flex flex-col space-y-10 p-4 border-1 border-gray-700">
-            <div className="flex items-center pl-8 gap-3 border-gray-700 py-6">
+          <div className="flex flex-col space-y-10 p-4 border-1 border-[#252525]">
+            <div className="flex items-center pl-8 gap-3 border-[#252525] py-6">
               CONNECT
             </div>
             <div>
@@ -55,8 +55,8 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="flex flex-col space-y-10 p-4 border-1 border-gray-700">
-            <div className="flex items-center pl-8 gap-3 border-gray-700 py-6">
+          <div className="flex flex-col space-y-10 p-4 border-1 border-[#252525]">
+            <div className="flex items-center pl-8 gap-3 border-[#252525] py-6">
               LEGAL
             </div>
             <ul className="flex flex-col pl-8 gap-10">
@@ -64,33 +64,33 @@ const Footer = () => {
               <li>Terms and Conditions</li>
             </ul>
           </div>
-          <div className="border-1 border-gray-700">
+          <div className="border-1 border-[#252525]">
             <div>
               <ul className="cursor-pointer">
-                <li className="py-3  border-b-1 border-gray-800 pl-8">
+                <li className="py-3  border-b-1 border-[#252525] pl-8">
                   Twitter
                 </li>
-                <li className="py-3  border-b-1 border-gray-800 pl-8">
+                <li className="py-3  border-b-1 border-[#252525] pl-8">
                   Instagram
                 </li>
-                <li className="py-3  border-b-1 border-gray-800 pl-8">
+                <li className="py-3  border-b-1 border-[#252525] pl-8">
                   Linkedin
                 </li>
-                <li className="py-3  border-b-1 border-gray-800 pl-8">
+                <li className="py-3  border-b-1 border-[#252525] pl-8">
                   Behance
                 </li>
-                <li className="py-3  border-b-1 border-gray-800 pl-8">
+                <li className="py-3  border-b-1 border-[#252525] pl-8">
                   Dribble
                 </li>
 
-                <li className="py-3  border-gray-800 pl-8">Facebook</li>
+                <li className="py-3  border-[#252525] pl-8">Facebook</li>
               </ul>
             </div>
           </div>
         </div>
         <Link
           isExternal
-          className="flex w-full justify-center items-center gap-1 text-current mt-10 border-t-1 border-gray-800 py-2"
+          className="flex w-full justify-center items-center gap-1 text-current mt-10 border-t-1 border-[#252525] py-2"
           href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
           title="nextui.org homepage">
           <span className="text-default-600">

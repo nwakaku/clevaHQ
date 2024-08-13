@@ -191,7 +191,7 @@ export default function Home() {
             customized but also transformative.
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row justify-between w-full border-t-2 border-b-2 border-gray-800 p-4 mt-8">
+        <div className="flex flex-col lg:flex-row justify-between w-full border-t-2 border-b-2 border-[#252525] p-4 mt-8">
           <div className="flex flex-col gap-4">
             <h2 className="font-bold text-[36px]">
               <CountUp
@@ -337,9 +337,10 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 items-center justify-between gap-8 w-full  pb-10">
           <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
             <Accordion
+              showDivider={false}
               selectedKeys={selectedKeys}
               hideIndicator={true}
-              className="w-full"
+              className="w-full border-none"
               onSelectionChange={handleSelectionChange}>
               <AccordionItem
                 key="1"
@@ -518,6 +519,7 @@ export default function Home() {
 
           <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
             <Accordion
+              showDivider={false}
               hideIndicator={true}
               selectedKeys={selectedKeys}
               className="w-full"
