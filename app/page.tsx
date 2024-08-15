@@ -21,94 +21,58 @@ export default function Home() {
     });
   }, []);
 
-  const accordionItems = [
-    {
-      key: "1",
-      ariaLabel: "Accordion 1",
-      title: "Client-Centric Approach",
-      content:
-        "At ClevaHQ, our clients are at the heart of everything we do...",
-    },
-    {
-      key: "2",
-      ariaLabel: "Accordion 2",
-      title: "Innovative Solutions",
-      content: "We leverage cutting-edge technology and creative thinking...",
-    },
-    {
-      key: "3",
-      ariaLabel: "Accordion 3",
-      title: "Exceptional Quality",
-      content:
-        "Quality is our top priority. We adhere to the highest standards...",
-    },
-    {
-      key: "4",
-      ariaLabel: "Accordion 4",
-      title: "Continuous Improvement",
-      content: "We believe in the power of continuous improvement...",
-    },
-    {
-      key: "5",
-      ariaLabel: "Accordion 5",
-      title: "Agility and Adaptability",
-      content: "In a rapidly changing world, agility is key...",
-    },
-  ];
-
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set(["1"])
   );
-
   const [currentImage, setCurrentImage] = React.useState("/fintech.svg");
   const [whyImage, setWhyImage] = React.useState("/whychoos.svg");
-
-  const defaultContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+  const [titleColors, setTitleColors] = React.useState({
+    "1": "#DBFB8E",
+    "2": "#FFFFFF",
+    "3": "#FFFFFF",
+    "4": "#FFFFFF",
+    "5": "#FFFFFF",
+  });
 
   const handleSelectionChange = (keys: Selection) => {
     setSelectedKeys(keys);
-    const key = Array.from(keys).pop();
+    const key = Array.from(keys).pop() || "1";
 
+    // Update the images based on the selected key
     switch (key) {
       case "1":
         setCurrentImage("/fintech.svg");
+        setWhyImage("/whychoos.svg");
         break;
       case "2":
         setCurrentImage("/edtech.svg");
-        break;
-      case "3":
-        setCurrentImage("/ecommerce.svg");
-        break;
-      case "4":
-        setCurrentImage("/health.svg");
-        break;
-      case "5":
-        setCurrentImage("/logistics.svg");
-        break;
-      default:
-        setCurrentImage("/fintech.svg");
-    }
-
-    switch (key) {
-      case "1":
-        setWhyImage("/whychoos.svg");
-        break;
-      case "2":
         setWhyImage("/innov.svg");
         break;
       case "3":
+        setCurrentImage("/ecommerce.svg");
         setWhyImage("/qual.svg");
         break;
       case "4":
+        setCurrentImage("/health.svg");
         setWhyImage("/improv.svg");
         break;
       case "5":
+        setCurrentImage("/logistics.svg");
         setWhyImage("/agil.svg");
         break;
       default:
+        setCurrentImage("/fintech.svg");
         setWhyImage("/whychoos.svg");
     }
+
+    // Update the title colors
+    setTitleColors((prevColors) => ({
+      "1": key === "1" ? "#DBFB8E" : "#FFFFFF",
+      "2": key === "2" ? "#DBFB8E" : "#FFFFFF",
+      "3": key === "3" ? "#DBFB8E" : "#FFFFFF",
+      "4": key === "4" ? "#DBFB8E" : "#FFFFFF",
+      "5": key === "5" ? "#DBFB8E" : "#FFFFFF",
+    }));
   };
 
   const onComplete = () => {
@@ -345,51 +309,81 @@ export default function Home() {
               <AccordionItem
                 key="1"
                 aria-label="Accordion 1"
-                title="Client-Centric Approach">
+                title={
+                  <p
+                    className="font-semibold"
+                    style={{ color: titleColors["1"] }}>
+                    Client-Centric Approach
+                  </p>
+                }>
                 <p className="text-sm text-[#848484]">
-                  {
-                    "At ClevaHQ, our clients are at the heart of everything we do. We tailor our solutions to meet your specific needs and ensure your satisfaction every step of the way."
-                  }
+                  At ClevaHQ, our clients are at the heart of everything we do.
+                  We tailor our solutions to meet your specific needs and ensure
+                  your satisfaction every step of the way.
                 </p>
               </AccordionItem>
               <AccordionItem
                 key="2"
                 aria-label="Accordion 2"
-                title="Innovative Solutions">
+                title={
+                  <p
+                    className="font-semibold"
+                    style={{ color: titleColors["2"] }}>
+                    Innovative Solutions
+                  </p>
+                }>
                 <p className="text-sm text-[#848484]">
-                  {
-                    "We leverage cutting-edge technology and creative thinking to deliver innovative solutions that keep you ahead of the competition."
-                  }
+                  We leverage cutting-edge technology and creative thinking to
+                  deliver innovative solutions that keep you ahead of the
+                  competition.
                 </p>
               </AccordionItem>
               <AccordionItem
                 key="3"
                 aria-label="Accordion 3"
-                title="Exceptional Quality">
+                title={
+                  <p
+                    className="font-semibold"
+                    style={{ color: titleColors["3"] }}>
+                    Exceptional Quality
+                  </p>
+                }>
                 <p className="text-sm text-[#848484]">
-                  {
-                    "Quality is our top priority. We adhere to the highest standards to ensure that every project we deliver exceeds your expectations."
-                  }
+                  Quality is our top priority. We adhere to the highest
+                  standards to ensure that every project we deliver exceeds your
+                  expectations.
                 </p>
               </AccordionItem>
               <AccordionItem
                 key="4"
                 aria-label="Accordion 4"
-                title="Continuous Improvement">
+                title={
+                  <p
+                    className="font-semibold"
+                    style={{ color: titleColors["4"] }}>
+                    Continuous Improvement
+                  </p>
+                }>
                 <p className="text-sm text-[#848484]">
-                  {
-                    "We believe in the power of continuous improvement. We regularly update our processes and technologies to provide you with the best possible outcomes."
-                  }
+                  We believe in the power of continuous improvement. We
+                  regularly update our processes and technologies to provide you
+                  with the best possible outcomes.
                 </p>
               </AccordionItem>
               <AccordionItem
                 key="5"
                 aria-label="Accordion 5"
-                title="Agility and Adaptability">
+                title={
+                  <p
+                    className="font-semibold"
+                    style={{ color: titleColors["5"] }}>
+                    Agility and Adaptability
+                  </p>
+                }>
                 <p className="text-sm text-[#848484]">
-                  {
-                    "In a rapidly changing world, agility is key. We are flexible and adaptable, ready to pivot and adjust to meet your evolving needs."
-                  }
+                  In a rapidly changing world, agility is key. We are flexible
+                  and adaptable, ready to pivot and adjust to meet your evolving
+                  needs.
                 </p>
               </AccordionItem>
             </Accordion>
@@ -397,86 +391,6 @@ export default function Home() {
           <Image src={whyImage} alt="img" width={600} height={600} />
         </div>
       </section>
-      {/* <section
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-once="false"
-        className="flex flex-col gap-6 mb-12 p-4 bg-[#0A0A0A] mt-[100px]">
-        <div className="grid lg:grid-cols-2">
-          <div className="flex flex-col gap-4 pb-10">
-            <h2 className={title({ size: "sm" })}>
-              Our Expertise Extends Across Industries
-            </h2>
-            <p className="text-sm hidden lg:block">
-              The intersection of finance and innovation. It encompasses digital
-              solutions transforming money management, payments, and
-              investments. From mobile apps to blockchain, FinTech shapes the
-              future of financial services. ClevaHQ, we craft user-centric
-              experiences for this dynamic industry. Let s innovate together!
-            </p>
-            <p className="text-sm lg:hidden block">
-              A full-service creative agency designing and building inventive
-              digital experiences across all platforms and brand touchpoints.
-            </p>
-          </div>
-          <div></div>
-        </div>
-
-        <div className="grid lg:grid-cols-2 items-start gap-4 w-full  pb-10">
-          <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
-            <Accordion
-              selectedKeys={selectedKeys}
-              hideIndicator={true}
-              className="w-full"
-              onSelectionChange={handleSelectionChange}>
-              <AccordionItem key="1" aria-label="Accordion 1" title="FinTech">
-                <p className="text-sm">
-                  {
-                    "The intersection of finance and innovation. It encompasses digital solutions transforming money management, payments, and investments. From mobile apps to blockchain, FinTech shapes the future of financial services. ClevaHQ, we craft user-centric experiences for this dynamic industry. Let’s innovate together!"
-                  }
-                </p>
-              </AccordionItem>
-              <AccordionItem key="2" aria-label="Accordion 2" title="EdTech">
-                <p className="text-sm">
-                  {
-                    " EdTech encompasses a wide range of tools, from virtual reality lessons to gamified classroom activities, making learning fun and accessible. At ClevaHQ, we focus on delivering the best to you."
-                  }
-                </p>
-              </AccordionItem>
-              <AccordionItem
-                key="3"
-                aria-label="Accordion 3"
-                title="E-commerce">
-                <p className="text-sm">
-                  {
-                    "In the fast-paced world of online retail, having a robust e-commerce platform is essential for success. Our e-commerce solutions are designed to create seamless shopping experiences that drive sales and foster customer loyalty. We combine cutting-edge technology with user-centric design to build e-commerce websites that stand out in a competitive market."
-                  }
-                </p>
-              </AccordionItem>
-              <AccordionItem
-                key="4"
-                aria-label="Accordion 4"
-                title="Healthcare">
-                <p className="text-sm">
-                  {
-                    "Elevating Healthcare Through Digital Excellence  Embracing the future of health with cutting-edge tech solutions, making medical journeys seamless for providers and patients alike."
-                  }
-                </p>
-              </AccordionItem>
-              <AccordionItem key="5" aria-label="Accordion 5" title="Logistics">
-                <p className="text-sm">
-                  {
-                    "Transforming Journeys in Freight & Logistics  Infusing Innovation and Efficiency into Logistics Solutions, Focusing on Real-Time Accessibility and User-Centric Design to Propel the Industry Forward."
-                  }
-                </p>
-              </AccordionItem>
-            </Accordion>
-          </div>
-          <Image src={currentImage} alt="img" width={600} height={600} />
-        </div>
-      </section> */}
       <section
         data-aos="fade-up"
         data-aos-offset="200"
@@ -523,51 +437,85 @@ export default function Home() {
               hideIndicator={true}
               selectedKeys={selectedKeys}
               className="w-full"
-              onSelectionChange={setSelectedKeys}>
+              onSelectionChange={handleSelectionChange}>
               <AccordionItem
                 key="1"
                 aria-label="Accordion 1"
-                title="What are your core services as an Agency">
+                title={
+                  <p
+                    className="font-semibold"
+                    style={{ color: titleColors["1"] }}>
+                    What are your core services as an Agency
+                  </p>
+                }>
                 <p className="text-[#848484]">
                   {
                     "Working closely with our clients, we're committed to delivering measurable results. We offer comprehensive services including branding, product development, cybersecurity.  In essence, we're your one-stop vision partner, transforming your business ideas into successful digital realities."
                   }
                 </p>
               </AccordionItem>
+
               <AccordionItem
                 key="2"
                 aria-label="Accordion 2"
-                title="Do you work with startups">
+                title={
+                  <p
+                    className="font-semibold"
+                    style={{ color: titleColors["2"] }}>
+                    Do you work with startups
+                  </p>
+                }>
                 <p className="text-[#848484]">
                   {
                     "Absolutely! At ClevaHQ, we love working with startups. We understand the unique challenges and opportunities that come with starting a new business. Our team is dedicated to helping you build a strong brand, develop innovative products, and secure your digital presence from the ground up."
                   }
                 </p>
               </AccordionItem>
+
               <AccordionItem
                 key="3"
                 aria-label="Accordion 3"
-                title="How much do you charge for a project">
+                title={
+                  <p
+                    className="font-semibold"
+                    style={{ color: titleColors["3"] }}>
+                    How much do you charge for a project
+                  </p>
+                }>
                 <p className="text-[#848484]">
                   {
                     "Our pricing is tailored to the specific needs and scope of each project. We offer competitive and transparent pricing to ensure you get the best value for your investment. To provide you with an accurate quote, we will discuss your project requirements in detail. Please contact us for a personalized consultation and pricing estimate."
                   }
                 </p>
               </AccordionItem>
+
               <AccordionItem
                 key="4"
                 aria-label="Accordion 4"
-                title="Do you accept redesign projects">
+                title={
+                  <p
+                    className="font-semibold"
+                    style={{ color: titleColors["4"] }}>
+                    Do you accept redesign projects
+                  </p>
+                }>
                 <p className="text-[#848484]">
                   {
                     "Yes, we do! Whether you need a complete overhaul of your existing brand or want to improve the functionality and aesthetics of your current digital products, ClevaHQ is here to help. We specialize in redesign projects and can provide fresh, innovative solutions to enhance your digital presence."
                   }
                 </p>
               </AccordionItem>
+
               <AccordionItem
                 key="5"
                 aria-label="Accordion 5"
-                title="What is your process for working with clients">
+                title={
+                  <p
+                    className="font-semibold"
+                    style={{ color: titleColors["5"] }}>
+                    What is your process for working with clients
+                  </p>
+                }>
                 <p className="text-[#848484]">
                   {
                     "Working closely with our clients, we're committed to delivering measurable results. We offer comprehensive services including branding, product development, cybersecurity.  In essence, we're your one-stop vision partner, transforming your business ideas into successful digital realities."
@@ -590,10 +538,7 @@ export default function Home() {
         </div>
         <div className="grid lg:grid-cols-3 sm:grid-cols-3 gap-10">
           {siteConfig.dummyFounders.map((item, index) => (
-            <Card
-              shadow="sm"
-              key={index}
-              className="rounded-none bg-default-50">
+            <Card shadow="sm" key={index} className="rounded-none bg-[#0A0A0A]">
               <CardBody className="overflow-visible p-3 ">
                 <Image
                   height={10}

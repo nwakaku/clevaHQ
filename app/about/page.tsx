@@ -5,6 +5,10 @@ import { title } from "@/components/primitives";
 import { Button } from "@nextui-org/button";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import type { Selection } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/card";
+import { TypeAnimation } from "react-type-animation";
+
+
 
 export default function AboutPage() {
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
@@ -22,7 +26,43 @@ export default function AboutPage() {
         data-aos-duration="1000"
         data-aos-once="false"
         className="flex items-end justify-center gap-4 h-svh pb-36">
-        <div className="grid lg:grid-cols-2 items-start">
+        <div className="grid lg:grid-cols-2 items-start mb-10">
+          <div className=" justify-center ">
+            <Card className="bg-transparent border-none shadow-none">
+              <CardBody>
+                <h1 className={title({ size: "md" })}>
+                  <TypeAnimation
+                    sequence={[
+                      // Same substring at the start will only be typed once, initially
+                      "About Us",
+                      1000,
+                      "Services We Offer",
+                      1000,
+                    ]}
+                    speed={50}
+                    repeat={Infinity}
+                  />
+                </h1>
+              </CardBody>
+            </Card>
+          </div>
+
+          <div className="flex flex-col gap-3 text-white">
+            <Card className="bg-transparent border-none shadow-none">
+              <CardBody>
+                <p>
+                  We are Fostering Intuitive products, Promoting Equality,
+                  Equity, and Growth through Design.
+                </p>
+              </CardBody>
+            </Card>
+
+            <Button className="w-fit rounded-none bg-[#DBFB8E] text-black">
+              Contact Us
+            </Button>
+          </div>
+        </div>
+        {/* <div className="grid lg:grid-cols-2 items-start">
           <div className=" max-w-lg justify-center flex-1">
             <h1 className={title({ size: "md" })}>About Us</h1>
           </div>
@@ -39,7 +79,7 @@ export default function AboutPage() {
               Contact Us
             </Button>
           </div>
-        </div>
+        </div> */}
       </section>
       <section
         data-aos="fade-up"

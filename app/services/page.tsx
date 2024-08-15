@@ -4,8 +4,11 @@ import React, { useEffect } from "react";
 import { title } from "@/components/primitives";
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/react";
+import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { TypeAnimation } from "react-type-animation";
+
 
 export default function AboutPage() {
    useEffect(() => {
@@ -24,6 +27,42 @@ export default function AboutPage() {
         data-aos-once="false"
         className="flex items-end justify-center gap-4 h-svh pb-36">
         <div className="grid lg:grid-cols-2 items-start mb-10">
+          <div className=" justify-center ">
+            <Card className="bg-transparent border-none shadow-none">
+              <CardBody>
+                <h1 className={title({ size: "md" })}>
+                  <TypeAnimation
+                    sequence={[
+                      // Same substring at the start will only be typed once, initially
+                      "What We Offer",
+                      1000,
+                      "Services We Offer",
+                      1000,
+                    ]}
+                    speed={50}
+                    repeat={Infinity}
+                  />
+                </h1>
+              </CardBody>
+            </Card>
+          </div>
+
+          <div className="flex flex-col gap-3 text-white">
+            <Card className="bg-transparent border-none shadow-none">
+              <CardBody>
+                <p>
+                  Our extensive knowledge in design and technology enables us to
+                  create high-quality brands and digital interactions.
+                </p>
+              </CardBody>
+            </Card>
+
+            <Button className="w-fit rounded-none bg-[#DBFB8E] text-black">
+              Contact Us
+            </Button>
+          </div>
+        </div>
+        {/* <div className="grid lg:grid-cols-2 items-start mb-10">
           <div className=" max-w-lg justify-center">
             <h1 className={title({ size: "md" })}>What We Offer</h1>
           </div>
@@ -40,9 +79,9 @@ export default function AboutPage() {
               Contact Us
             </Button>
           </div>
-        </div>
+        </div> */}
       </section>
-      <section className="flex items-start justify-center gap-4 p-4 mb-16 bg-default-50">
+      <section className="flex items-start justify-center gap-4 p-4 mt-[100px] bg-[#0A0A0A]">
         <div className="grid lg:grid-cols-2 items-center justify-between gap-10 w-full  pb-10">
           <div className="flex flex-col gap-6 w-full justify-stretch">
             <div className="flex flex-col gap-6 w-full justify-stretch">
@@ -75,7 +114,7 @@ export default function AboutPage() {
           />
         </div>
       </section>
-      <section className="flex items-start justify-center gap-4 p-4 mb-16 bg-default-50">
+      <section className="flex items-start justify-center gap-4 p-4 mt-[100px] bg-[#0A0A0A]">
         <div className="grid lg:grid-cols-2 items-center justify-between gap-10 w-full  pb-10">
           <div className="flex flex-col gap-6 w-full justify-stretch">
             <div className="flex flex-col gap-6 w-full justify-stretch">
@@ -109,7 +148,7 @@ export default function AboutPage() {
           />
         </div>
       </section>
-      <section className="flex items-start justify-center gap-4 p-4 mb-16 bg-default-50">
+      <section className="flex items-start justify-center gap-4 p-4 mt-[100px] bg-[#0A0A0A]">
         <div className="grid lg:grid-cols-2 items-center justify-between gap-10 w-full  pb-10">
           <div className="flex flex-col gap-6 w-full justify-stretch">
             <div className="flex flex-col gap-6 w-full justify-stretch">
