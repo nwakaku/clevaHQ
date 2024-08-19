@@ -36,7 +36,6 @@ const Footer = () => {
               <Image src={"/clevaLogo.svg"} alt="logo" width={120} />
             </div>
             <ul className=" flex flex-col justify-center items-center gap-4">
-              
               <li>Services</li>
               <li>About</li>
               <li>Contact</li>
@@ -67,23 +66,54 @@ const Footer = () => {
           <div className="border-1 border-[#252525]">
             <div>
               <ul className="cursor-pointer">
-                <li className="py-3  border-b-1 border-[#252525] pl-8">
-                  Twitter
+                <li className="py-3 border-b-1 border-[#252525] pl-8">
+                  <a
+                    href="https://x.com/ClevaHQofficial"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Twitter
+                  </a>
                 </li>
-                <li className="py-3  border-b-1 border-[#252525] pl-8">
-                  Instagram
+                <li className="py-3 border-b-1 border-[#252525] pl-8">
+                  <a
+                    href="https://www.instagram.com/cleva.hq/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Instagram
+                  </a>
                 </li>
-                <li className="py-3  border-b-1 border-[#252525] pl-8">
-                  Linkedin
+                <li className="py-3 border-b-1 border-[#252525] pl-8">
+                  <a
+                    href="https://www.linkedin.com/company/clevahq"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Linkedin
+                  </a>
                 </li>
-                <li className="py-3  border-b-1 border-[#252525] pl-8">
-                  Behance
+                <li className="py-3 border-b-1 border-[#252525] pl-8">
+                  <a
+                    href="https://www.behance.net/clevahqdigital/editor"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Behance
+                  </a>
                 </li>
-                <li className="py-3  border-b-1 border-[#252525] pl-8">
-                  Dribble
+                <li className="py-3 border-b-1 border-[#252525] pl-8">
+                  <a
+                    href="https://dribbble.com/ClevaHQ?onboarding=true&designer=true"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Dribble
+                  </a>
                 </li>
-
-                <li className="py-3  border-[#252525] pl-8">Facebook</li>
+                <li className="py-3 border-[#252525] pl-8">
+                  <a
+                    href="https://www.facebook.com/clevahq"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Facebook
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

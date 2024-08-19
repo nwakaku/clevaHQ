@@ -5,6 +5,8 @@ import { title } from "@/components/primitives";
 import { Button } from "@nextui-org/button";
 import { Input, Textarea } from "@nextui-org/react";
 import type { Selection } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/card";
+
 
 export default function AboutPage() {
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
@@ -24,16 +26,22 @@ export default function AboutPage() {
         className="flex items-end justify-center gap-4 h-svh pb-36">
         <div className="grid lg:grid-cols-2 mb-10 items-start">
           <div className=" max-w-lg justify-center flex-1">
-            <h1 className={title({ size: "md" })}>Contact Us</h1>
+            <Card className="bg-transparent rounded-none border-none shadow-none">
+              <CardBody>
+                <h1 className={title({ size: "md" })}>Contact Us</h1>
+              </CardBody>
+            </Card>
           </div>
 
           <div className="flex flex-col gap-3 flex-1">
-            <div>
-              <p>
-                Tell us about your project, We&apos;d love to learn more about
-                you and what we can design and build together.
-              </p>
-            </div>
+            <Card className="bg-transparent rounded-none border-none shadow-none">
+              <CardBody>
+                <p>
+                  Tell us about your project, We&apos;d love to learn more about
+                  you and what we can design and build together.
+                </p>
+              </CardBody>
+            </Card>
 
             <Button className="w-fit rounded-none bg-[#DBFB8E] text-black">
               Contact Us
