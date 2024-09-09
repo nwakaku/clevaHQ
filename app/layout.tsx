@@ -6,9 +6,8 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
+import { mulish } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
-import Image from "next/image";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
@@ -40,11 +39,11 @@ export default function RootLayout({
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          mulish.className
         )}>
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div
-            className="relative flex flex-col bg-cover bg-center h-screen">
+          <div className="relative flex flex-col bg-cover bg-center h-screen">
+            {/* Video background */}
             <video
               autoPlay
               loop
@@ -53,10 +52,17 @@ export default function RootLayout({
               <source src="/bgvideo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+
+            {/* Gradient overlay: 4/5 transparent, 1/5 black */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80 via-transparent via-[80%]" />
+
+            {/* Optional overlay for additional darkening */}
+            <div className="absolute inset-0 bg-black opacity-50" />
+
             <Navbar />
             <main className="container mx-auto max-w-7xl px-6 flex-grow">
               {children}
-            </main>{" "}
+            </main>
             <Footer />
           </div>
         </Providers>

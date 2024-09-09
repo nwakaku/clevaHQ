@@ -8,14 +8,44 @@ import type { Selection } from "@nextui-org/react";
 import { Card, CardBody } from "@nextui-org/card";
 import { TypeAnimation } from "react-type-animation";
 
-
-
 export default function AboutPage() {
+  
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set(["1"])
   );
+
+  const [titleColors, setTitleColors] = React.useState<Record<string, string>>({
+    "1": "#DBFB8E",
+    "2": "#FFFFFF",
+    "3": "#FFFFFF",
+    "4": "#FFFFFF",
+    "5": "#FFFFFF",
+  });
+
   const defaultContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+  const handleSelectionChange = (keys: Selection) => {
+    setSelectedKeys(keys);
+
+    const newTitleColors: Record<string, string> = {
+      "1": "#FFFFFF",
+      "2": "#FFFFFF",
+      "3": "#FFFFFF",
+      "4": "#FFFFFF",
+      "5": "#FFFFFF",
+    };
+
+    // Check if keys is a Set before iterating
+    if (keys instanceof Set) {
+      Array.from(keys).forEach((key) => {
+        newTitleColors[key as string] = "#DBFB8E"; // Active color (lemon)
+      });
+    }
+
+    setTitleColors(newTitleColors);
+  };
+
 
   return (
     <>
@@ -137,36 +167,64 @@ export default function AboutPage() {
           <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
             <Accordion
               className="w-full"
+              hideIndicator={true}
               selectedKeys={selectedKeys}
-              onSelectionChange={setSelectedKeys}>
+              showDivider={false}
+              onSelectionChange={(keys) =>
+                handleSelectionChange(new Set(keys))
+              }>
               <AccordionItem
                 key="1"
                 aria-label="Accordion 1"
-                title="Client-Centric Approach">
-                {defaultContent}
+                title={
+                  <span style={{ color: titleColors["1"] }}>
+                    Client-Centric Approach
+                  </span>
+                }>
+                <p>
+                  {
+                    "Continuously prioritize understanding and meeting the needs of our clients, fostering long-term partnerships built on trust and mutual success."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="2"
                 aria-label="Accordion 2"
-                title="Innovative Solutions">
+                title={
+                  <span style={{ color: titleColors["2"] }}>
+                    Innovative Solutions
+                  </span>
+                }>
                 {defaultContent}
               </AccordionItem>
               <AccordionItem
                 key="3"
                 aria-label="Accordion 3"
-                title="Exceptional Quality">
+                title={
+                  <span style={{ color: titleColors["3"] }}>
+                    Exceptional Quality
+                  </span>
+                }>
                 {defaultContent}
               </AccordionItem>
               <AccordionItem
                 key="4"
                 aria-label="Accordion 4"
-                title="Continuous Improvement">
+                title={
+                  <span style={{ color: titleColors["4"] }}>
+                    Continuous Improvement
+                  </span>
+                }>
                 {defaultContent}
               </AccordionItem>
               <AccordionItem
                 key="5"
                 aria-label="Accordion 5"
-                title="Agility and Adaptability">
+                title={
+                  <span style={{ color: titleColors["5"] }}>
+                    Agility and Adaptability
+                  </span>
+                }>
                 {defaultContent}
               </AccordionItem>
             </Accordion>
@@ -190,37 +248,65 @@ export default function AboutPage() {
 
           <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
             <Accordion
+              showDivider={false}
+              hideIndicator={true}
               selectedKeys={selectedKeys}
               className="w-full"
-              onSelectionChange={setSelectedKeys}>
+              onSelectionChange={(keys) =>
+                handleSelectionChange(new Set(keys))
+              }>
               <AccordionItem
                 key="1"
                 aria-label="Accordion 1"
-                title="What are your core services as an Agency">
-                {defaultContent}
+                title={
+                  <span style={{ color: titleColors["1"] }}>
+                    What are your core services as an Agency
+                  </span>
+                }>
+                <p>
+                  {
+                    "Our seasoned team of senior UI/UX designers is dedicated to curating immersive digital experiences that empower brands to flourish in the contemporary landscape."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="2"
                 aria-label="Accordion 2"
-                title="Do you work with startups">
+                title={
+                  <span style={{ color: titleColors["2"] }}>
+                    Do you work with startups
+                  </span>
+                }>
                 {defaultContent}
               </AccordionItem>
               <AccordionItem
                 key="3"
                 aria-label="Accordion 3"
-                title="How much do you charge for a project">
+                title={
+                  <span style={{ color: titleColors["3"] }}>
+                    How much do you charge for a project
+                  </span>
+                }>
                 {defaultContent}
               </AccordionItem>
               <AccordionItem
                 key="4"
                 aria-label="Accordion 4"
-                title="Do you accept redesign projects">
+                title={
+                  <span style={{ color: titleColors["4"] }}>
+                    Do you accept redesign projects
+                  </span>
+                }>
                 {defaultContent}
               </AccordionItem>
               <AccordionItem
                 key="5"
                 aria-label="Accordion 5"
-                title="What is your process for working with clients">
+                title={
+                  <span style={{ color: titleColors["5"] }}>
+                    What is your process for working with clients
+                  </span>
+                }>
                 {defaultContent}
               </AccordionItem>
             </Accordion>

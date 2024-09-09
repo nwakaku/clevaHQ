@@ -8,14 +8,16 @@ import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { TypeAnimation } from "react-type-animation";
-
+import { useRouter } from "next/navigation";
 
 export default function AboutPage() {
-   useEffect(() => {
-     Aos.init({
-       disable: false,
-     });
-   }, []);
+  useEffect(() => {
+    Aos.init({
+      disable: false,
+    });
+  }, []);
+
+  const router = useRouter();
 
   return (
     <>
@@ -57,31 +59,14 @@ export default function AboutPage() {
               </CardBody>
             </Card>
 
-            <Button className="w-fit rounded-none bg-[#DBFB8E] text-black">
+            <Button className="w-fit rounded-md bg-[#DBFB8E] text-black">
               Contact Us
             </Button>
           </div>
         </div>
-        {/* <div className="grid lg:grid-cols-2 items-start mb-10">
-          <div className=" max-w-lg justify-center">
-            <h1 className={title({ size: "md" })}>What We Offer</h1>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <div>
-              <p>
-                Our extensive knowledge in design and technology enables us to
-                create high-quality brands and digital interactions.
-              </p>
-            </div>
-
-            <Button className="w-fit rounded-none bg-[#DBFB8E] text-black">
-              Contact Us
-            </Button>
-          </div>
-        </div> */}
       </section>
-      <section className="flex items-start justify-center gap-4 p-4 mt-[100px] bg-[#0A0A0A]">
+
+      <section className="flex items-start justify-center gap-4 p-4 lg:mt-[100px] bg-[#0A0A0A]">
         <div className="grid lg:grid-cols-2 items-center justify-between gap-10 w-full  pb-10">
           <div className="flex flex-col gap-6 w-full justify-stretch">
             <div className="flex flex-col gap-6 w-full justify-stretch">
@@ -111,6 +96,41 @@ export default function AboutPage() {
             alt="img"
             width={600}
             height={600}
+          />
+        </div>
+      </section>
+      <section className="flex items-start justify-center gap-4 p-4 mt-[100px] bg-[#0A0A0A]">
+        <div className="grid lg:grid-cols-2 items-center justify-between gap-10 w-full  pb-10">
+          <div className="flex flex-col gap-6 w-full justify-stretch">
+            <div className="flex flex-col gap-6 w-full justify-stretch">
+              <div className="inline-block max-w-lg justify-center">
+                <h1 className={title({ size: "sm" })}>UI/UX Design</h1>
+              </div>
+              <p>
+                At Cyark, we are committed to ensuring that everyone experiences
+                an exceptional user journey, whether engaged in work or leisure.
+                We specialize in crafting memorable enterprise and consumer
+                products, offering comprehensive design systems to facilitate
+                effortless product iteration.
+              </p>
+              <ul className="flex flex-col list-disc px-4 gap-2">
+                <li>Consumer & Enterprise Design </li>
+                <li> Software User</li>
+                <li>Research & Testing</li>
+                <li>CX, UX & Interaction Design </li>
+                <li>UI Design Motion </li>
+                <li>Design Systems</li>
+              </ul>
+            </div>
+          </div>
+          <Image
+            alt="img"
+            className="rounded-none p-2"
+            height={600}
+            src={
+              "https://res.cloudinary.com/dgbreoalg/image/upload/v1725891148/Rectangle_10_dm8hq1.svg"
+            }
+            width={600}
           />
         </div>
       </section>
@@ -178,6 +198,37 @@ export default function AboutPage() {
             width={600}
             height={600}
           />
+        </div>
+      </section>
+      <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        style={{ backgroundImage: `url('/bgImg.svg')` }}
+        className="relative py-10 text-white flex mt-[100px] justify-center items-center">
+        {/* Dim Overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+
+        {/* Content */}
+        <div className="relative z-10 p-4 flex flex-col gap-4 justify-center text-center lg:w-1/2">
+          <h2 className="font-semibold text-4xl lg:text-5xl">
+            Your one-stop vision partner
+          </h2>
+          <p className="text-[#848484]">
+            ClevaHQ is a digital agency empowering visionary entrepreneurs,
+            startups, small businesses, and medium enterprises to launch, grow,
+            and scale their businesses from ideation to launch, and ultimately
+            market success.
+          </p>
+          <div>
+            <Button
+              onPress={() => router.push("/about")}
+              className="bg-[#DBFB8E] text-black rounded-md">
+              Contact Us
+            </Button>
+          </div>
         </div>
       </section>
     </>

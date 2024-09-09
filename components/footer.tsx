@@ -7,7 +7,7 @@ import { Image } from "@nextui-org/react";
 const Footer = () => {
   return (
     <>
-      <div
+      {/* <div
         style={{ backgroundImage: `url('/bgImg.svg')` }}
         className="py-20 text-white text-center flex flex-col items-center mt-[100px]">
         <div className="lg:w-1/3 flex flex-col space-y-8 items-center lg:px-0 px-4">
@@ -28,7 +28,7 @@ const Footer = () => {
             Contact Us
           </Button>
         </div>
-      </div>
+      </div> */}
       <footer className="w-full mt-[100px] flex flex-col items-center justify-center py-3 text-gray-500 container mx-auto max-w-7xl px-6 flex-grow">
         <div className="grid lg:grid-cols-4 items-stretch justify-stretch w-full">
           <div className="flex flex-col space-y-10 py-4  border-1 border-[#252525]">

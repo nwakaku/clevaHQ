@@ -1,19 +1,23 @@
 "use client";
 
-import { Link } from "@nextui-org/link";
 import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
+
+import type { Selection } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
-import Image from "next/image";
 import { Card, CardBody, CardFooter } from "@nextui-org/card";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import type { Selection } from "@nextui-org/react";
+
+import Image from "next/image";
 import React, { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { CountUp } from "use-count-up";
+
+// import CountUp from "react-countup";
 import { useRouter } from "next/navigation";
+import CountUp, { useCountUp } from "react-countup";
+
+import { title } from "@/components/primitives";
 
 export default function Home() {
   useEffect(() => {
@@ -26,7 +30,7 @@ export default function Home() {
     new Set(["1"])
   );
   const [currentImage, setCurrentImage] = React.useState("/fintech.svg");
-  const [whyImage, setWhyImage] = React.useState("/whychoos.svg");
+  const [whyImage, setWhyImage] = React.useState("/Coner.png");
   const [titleColors, setTitleColors] = React.useState({
     "1": "#DBFB8E",
     "2": "#FFFFFF",
@@ -43,19 +47,19 @@ export default function Home() {
     switch (key) {
       case "1":
         setCurrentImage("/fintech.svg");
-        setWhyImage("/whychoos.svg");
+        setWhyImage("/Coner.png");
         break;
       case "2":
         setCurrentImage("/edtech.svg");
-        setWhyImage("/innov.svg");
+        setWhyImage("/Spiral.png");
         break;
       case "3":
         setCurrentImage("/ecommerce.svg");
-        setWhyImage("/qual.svg");
+        setWhyImage("/quality.png");
         break;
       case "4":
         setCurrentImage("/health.svg");
-        setWhyImage("/improv.svg");
+        setWhyImage("/Coner.png");
         break;
       case "5":
         setCurrentImage("/logistics.svg");
@@ -76,9 +80,16 @@ export default function Home() {
     }));
   };
 
-  const onComplete = () => {
-    return { shouldRepeat: true, delay: 2 };
-  };
+  // const onComplete = () => {
+  //   return { shouldRepeat: true, delay: 2 };
+  // };
+
+  useCountUp({
+    ref: "counter",
+    end: 1234567,
+    enableScrollSpy: true,
+    scrollSpyDelay: 1000,
+  });
 
   const router = useRouter();
 
@@ -90,15 +101,17 @@ export default function Home() {
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-once="false"
-        className="flex items-end justify-center gap-4 h-svh pb-36">
-        <div className="grid lg:grid-cols-2 items-start mb-10">
-          <div className=" justify-center ">
+        className="relative flex items-end justify-center gap-4 h-svh pb-36">
+        {/* Overlay */}
+
+        {/* Content */}
+        <div className="relative z-10 grid lg:grid-cols-2 items-start mb-10">
+          <div className="justify-center">
             <Card className="bg-transparent rounded-none border-none shadow-none">
               <CardBody>
                 <h1 className={title({ size: "md" })}>
                   <TypeAnimation
                     sequence={[
-                      // Same substring at the start will only be typed once, initially
                       "Empower & secure Your Digital Presence",
                       1000,
                       "Empower & secure Your Digital Identity",
@@ -125,7 +138,7 @@ export default function Home() {
             </Card>
 
             <Button
-              className="w-fit rounded-none bg-[#DBFB8E] text-black"
+              className="w-fit rounded-md bg-[#DBFB8E] text-black"
               onClick={() =>
                 (window.location.href = "mailto:ClevaHQ@gmail.com")
               }>
@@ -142,86 +155,84 @@ export default function Home() {
         data-aos-duration="1000"
         data-aos-once="false"
         className="flex flex-col items-end justify-center gap-4 min-h-svh ">
-        <div>
-          <div className="flex justify-between  w-full">
-            <h2 className={title({ size: "sm" })}>Reimagining Possibilities</h2>
+        <div className="flex flex-col justify-center items-center ">
+          <div className="flex flex-col w-2/3 ">
+            <div className="flex justify-center text-center  w-full">
+              <h2 className={title({ size: "md" })}>
+                Holistic Advantage for <br />
+                Empowered Business Success
+              </h2>
+            </div>
 
-            <Button
-              className="w-fit hidden lg:block rounded-none bg-[#DBFB8E] text-black"
-              onClick={() =>
-                (window.location.href = "mailto:ClevaHQ@gmail.com")
-              }>
-              Contact Us
-            </Button>
+            <p className="mt-6 text-[#848484] text-center">
+              ClevaHQ offers a unique blend of services that cover every aspect
+              of launching and growing a business. From business name
+              registration, branding, and trademarking, to UI/UX design, website
+              and mobile app development, and product scaling, ClevaHQ provides
+              an all-inclusive solution. We’re committed to delivering
+              measurable results through deep involvement in every stage of the
+              business lifecycle.
+            </p>
           </div>
-
-          <p className="mt-6 text-[#848484]">
-            At ClevaHQ, we’re more than a global UI/UX Design Agency. We’re
-            technology pioneers, constantly exploring new frontiers like AI to
-            redefine what’s achievable in design. Our diverse team of designers,
-            strategists, and developers shares a passion for innovation and a
-            commitment to driving change. We delve deep into our clients’ unique
-            needs and their target audience, then leverage the power of
-            technology and data to create digital experiences that are not only
-            customized but also transformative.
-          </p>
         </div>
-        <div className="flex flex-col lg:flex-row justify-between w-full border-t-2 border-b-2 border-[#252525] p-4 mt-8">
-          <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-[36px]">
-              <CountUp
-                isCounting
-                end={8}
-                duration={3.2}
-                onComplete={onComplete}
-              />
-            </h2>
-            <p className=" text-[#848484]">Years of Expertise</p>
+
+        <div className="flex flex-col lg:flex-row justify-between w-full p-4 mt-8">
+          <div className="flex gap-4">
+            <Image
+              alt="experience"
+              height={70}
+              src={
+                "https://res.cloudinary.com/dgbreoalg/image/upload/v1725885193/experience_muxqmr.svg"
+              }
+              width={70}
+            />
+            <div className="flex flex-col gap-2">
+              <h2 className="font-semibold text-[36px]">
+                <CountUp enableScrollSpy duration={3.2} end={5} /> +
+              </h2>
+              <p className=" text-[#848484]">Years of Expertise</p>
+            </div>
           </div>
-          <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-[36px]">
-              <CountUp
-                isCounting
-                end={50}
-                duration={3.2}
-                onComplete={onComplete}
-              />
-              +{" "}
-            </h2>
-            <p className=" text-[#848484]">Creative Pros</p>
+
+          <div className="flex gap-4">
+            <Image
+              alt="experience"
+              height={70}
+              src={
+                "https://res.cloudinary.com/dgbreoalg/image/upload/v1725885304/pros_jcup1k.svg"
+              }
+              width={70}
+            />
+            <div className="flex flex-col gap-2">
+              <h2 className="font-semibold text-[36px]">
+                <CountUp enableScrollSpy duration={3.2} end={20} />+{" "}
+              </h2>
+              <p className=" text-[#848484]">Creative Pros</p>
+            </div>
           </div>
-          <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-[36px]">
-              <CountUp
-                isCounting
-                end={150}
-                duration={3.2}
-                onComplete={onComplete}
-              />
-              +{" "}
-            </h2>
-            <p className=" text-[#848484]">Projects Delivered</p>
-          </div>
-          <div className="flex flex-col gap-4">
-            <h2 className="font-bold text-[36px]">
-              <CountUp
-                isCounting
-                end={20}
-                duration={3.2}
-                onComplete={onComplete}
-              />
-              +{" "}
-            </h2>
-            <p className=" text-[#848484]">Industries Serviced</p>
+
+          <div className="flex gap-4">
+            <Image
+              alt="experience"
+              height={70}
+              src={
+                "https://res.cloudinary.com/dgbreoalg/image/upload/v1725885359/industry_rjlefa.svg"
+              }
+              width={70}
+            />
+            <div className="flex flex-col gap-2">
+              <h2 className="font-semibold text-[36px]">
+                <CountUp enableScrollSpy end={8} duration={3.2} />+{" "}
+              </h2>
+              <p className=" text-[#848484]">Industries Serviced</p>
+            </div>
           </div>
         </div>
         <Button className="w-full lg:hidden block rounded-none bg-[#DBFB8E] my-4 text-black">
           Learn About Us
         </Button>
         <div className="w-full flex flex-col mt-[100px]">
-          <h2 className="font-semibold text-3xl my-6 text-center">
-            Services we Offer
-          </h2>
+          <h2 className="font-semibold text-3xl my-6 ">Services we Offer</h2>
 
           {/* Service Cards */}
           {[
@@ -289,7 +300,7 @@ export default function Home() {
               {/* Image with increased zoom, more bend effect, hidden on small screens */}
               <div className="hidden lg:flex basis-1/2 justify-end items-center group-hover:pr-40 transition-all duration-500">
                 <Image
-                  className="group-hover:scale-150 group-hover:-rotate-12 transition-transform duration-500"
+                  className="group-hover:scale-150 group-hover:-rotate-12 rounded-md transition-transform duration-500"
                   src={service.imageSrc}
                   alt={service.alt}
                   width={100}
@@ -300,6 +311,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+
       <section
         data-aos="fade-up"
         data-aos-offset="200"
@@ -307,143 +319,87 @@ export default function Home() {
         data-aos-duration="1000"
         data-aos-once="false"
         className="flex flex-col gap-6 mt-[100px] p-4 bg-[#0A0A0A]">
-        <div className="grid lg:grid-cols-2">
+        <div className="grid lg:grid-cols-2 items-center justify-between gap-8 w-full  pb-10">
           <div className="flex flex-col gap-4 pb-10">
-            <h2 className={title({ size: "sm" })}>Why choose ClevaHQ</h2>
+            <h2 className={title({ size: "md" })}>Why choose ClevaHQ</h2>
             <p className="text-sm hidden lg:block text-[#848484]">
-              At ClevaHQ, we understand that running a business is more than
-              just managing tasks; it&apos;s about driving growth, fostering
-              innovation, and maintaining seamless operations. Here&apos;s why
-              ClevaHQ stands out as your ultimate business solution.
+              Your vision is to make an impact through your business and to
+              succeed, you need a partner. One who sees what you see and is as
+              passionate as you in achieving it. ClevaHQ partners with you to
+              bring your innovative ideas to life, providing comprehensive
+              services that cover every aspect of your business journey.
             </p>
             <p className="text-sm block lg:hidden text-[#848484]">
-              we aim to fulfill our mission and realize our vision, becoming the
-              go-to digital partner for businesses seeking to thrive in
-              today&apos;s dynamic business landscape.
+              Your vision is to make an impact through your business and to
+              succeed, you need a partner. One who sees what you see and is as
+              passionate as you in achieving it. ClevaHQ partners with you to
+              bring your innovative ideas to life, providing comprehensive
+              services that cover every aspect of your business journey.
             </p>
+            <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
+              <Accordion
+                showDivider={false}
+                selectedKeys={selectedKeys}
+                hideIndicator={true}
+                className="w-full border-none"
+                onSelectionChange={handleSelectionChange}>
+                <AccordionItem
+                  key="1"
+                  aria-label="Accordion 1"
+                  title={
+                    <h3
+                      className="font-semibold text-3xl"
+                      style={{ color: titleColors["1"] }}>
+                      Client-Centric Approach
+                    </h3>
+                  }>
+                  <p className="text-sm text-[#848484]">
+                    At ClevaHQ, our clients are at the heart of everything we
+                    do. We tailor our solutions to meet your specific needs and
+                    ensure your satisfaction every step of the way.
+                  </p>
+                </AccordionItem>
+                <AccordionItem
+                  key="2"
+                  aria-label="Accordion 2"
+                  title={
+                    <h3
+                      className="font-semibold text-3xl"
+                      style={{ color: titleColors["2"] }}>
+                      Innovative Solutions
+                    </h3>
+                  }>
+                  <p className="text-sm text-[#848484]">
+                    At ClevaHQ, our clients are at the heart of everything we
+                    do. We tailor our solutions to meet your specific needs and
+                    ensure your satisfaction every step of the way.
+                  </p>
+                </AccordionItem>
+                <AccordionItem
+                  key="3"
+                  aria-label="Accordion 3"
+                  title={
+                    <h3
+                      className="font-semibold text-3xl"
+                      style={{ color: titleColors["3"] }}>
+                      Exceptional Quality
+                    </h3>
+                  }>
+                  <p className="text-sm text-[#848484]">
+                    At ClevaHQ, our clients are at the heart of everything we
+                    do. We tailor our solutions to meet your specific needs and
+                    ensure your satisfaction every step of the way.
+                  </p>
+                </AccordionItem>
+              </Accordion>
+            </div>
           </div>
-          <div></div>
+          <div className="flex justify-center items-center">
+            {" "}
+            <Image src={whyImage} alt="img" width={400} height={400} />
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 items-center justify-between gap-8 w-full  pb-10">
-          <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
-            <Accordion
-              showDivider={false}
-              selectedKeys={selectedKeys}
-              hideIndicator={true}
-              className="w-full border-none"
-              onSelectionChange={handleSelectionChange}>
-              <AccordionItem
-                key="1"
-                aria-label="Accordion 1"
-                title={
-                  <p
-                    className="font-semibold"
-                    style={{ color: titleColors["1"] }}>
-                    Client-Centric Approach
-                  </p>
-                }>
-                <p className="text-sm text-[#848484]">
-                  At ClevaHQ, our clients are at the heart of everything we do.
-                  We tailor our solutions to meet your specific needs and ensure
-                  your satisfaction every step of the way.
-                </p>
-              </AccordionItem>
-              <AccordionItem
-                key="2"
-                aria-label="Accordion 2"
-                title={
-                  <p
-                    className="font-semibold"
-                    style={{ color: titleColors["2"] }}>
-                    Innovative Solutions
-                  </p>
-                }>
-                <p className="text-sm text-[#848484]">
-                  We leverage cutting-edge technology and creative thinking to
-                  deliver innovative solutions that keep you ahead of the
-                  competition.
-                </p>
-              </AccordionItem>
-              <AccordionItem
-                key="3"
-                aria-label="Accordion 3"
-                title={
-                  <p
-                    className="font-semibold"
-                    style={{ color: titleColors["3"] }}>
-                    Exceptional Quality
-                  </p>
-                }>
-                <p className="text-sm text-[#848484]">
-                  Quality is our top priority. We adhere to the highest
-                  standards to ensure that every project we deliver exceeds your
-                  expectations.
-                </p>
-              </AccordionItem>
-              <AccordionItem
-                key="4"
-                aria-label="Accordion 4"
-                title={
-                  <p
-                    className="font-semibold"
-                    style={{ color: titleColors["4"] }}>
-                    Continuous Improvement
-                  </p>
-                }>
-                <p className="text-sm text-[#848484]">
-                  We believe in the power of continuous improvement. We
-                  regularly update our processes and technologies to provide you
-                  with the best possible outcomes.
-                </p>
-              </AccordionItem>
-              <AccordionItem
-                key="5"
-                aria-label="Accordion 5"
-                title={
-                  <p
-                    className="font-semibold"
-                    style={{ color: titleColors["5"] }}>
-                    Agility and Adaptability
-                  </p>
-                }>
-                <p className="text-sm text-[#848484]">
-                  In a rapidly changing world, agility is key. We are flexible
-                  and adaptable, ready to pivot and adjust to meet your evolving
-                  needs.
-                </p>
-              </AccordionItem>
-            </Accordion>
-          </div>
-          <Image src={whyImage} alt="img" width={600} height={600} />
-        </div>
-      </section>
-      <section
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-once="false"
-        style={{ backgroundImage: `url('/bgImg.svg')` }}
-        className="py-10 text-white  flex mt-[100px] justify-center items-center">
-        <div className="p-4 flex flex-col gap-4 justify-center text-center lg:w-1/2">
-          <h2 className="font-semibold text-4xl lg:text-5xl">
-            Your one-stop vision partner
-          </h2>
-          <p className="text-[#848484]">
-            ClevaHQ is a digital agency empowering visionary entrepreneurs,
-            startups, small businesses, and medium enterprises to launch, grow,
-            and scale their businesses from ideation to launch, and ultimately
-            market success.
-          </p>
-          <div>
-            <Button
-              onPress={() => router.push("/about")}
-              className="bg-[#DBFB8E] text-black rounded-none">
-              Get to know Us
-            </Button>
-          </div>
-        </div>
       </section>
 
       <section
@@ -455,9 +411,9 @@ export default function Home() {
         className="flex items-start justify-center gap-4 mt-[100px]">
         <div className="grid lg:grid-cols-2 items-start gap-4 w-full">
           <div className="inline-block max-w-lg justify-center flex-1">
-            <h1 className={title({ size: "sm" })}>
-              Curious Minds Want to Know
-            </h1>
+            <h2 className={title({ size: "lg" })}>
+              Curious Minds <br /> Want to Know
+            </h2>
           </div>
 
           <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
@@ -472,14 +428,14 @@ export default function Home() {
                 aria-label="Accordion 1"
                 title={
                   <p
-                    className="font-semibold"
+                    className="font-semibold text-2xl cursor-pointer"
                     style={{ color: titleColors["1"] }}>
                     What are your core services as an Agency
                   </p>
                 }>
                 <p className="text-[#848484]">
                   {
-                    "Working closely with our clients, we're committed to delivering measurable results. We offer comprehensive services including branding, product development, cybersecurity.  In essence, we're your one-stop vision partner, transforming your business ideas into successful digital realities."
+                    "Our seasoned team of senior UI/UX designers is dedicated to curating immersive digital experiences that empower brands to flourish in the contemporary landscape."
                   }
                 </p>
               </AccordionItem>
@@ -489,7 +445,7 @@ export default function Home() {
                 aria-label="Accordion 2"
                 title={
                   <p
-                    className="font-semibold"
+                    className="font-semibold text-2xl cursor-pointer"
                     style={{ color: titleColors["2"] }}>
                     Do you work with startups
                   </p>
@@ -506,7 +462,7 @@ export default function Home() {
                 aria-label="Accordion 3"
                 title={
                   <p
-                    className="font-semibold"
+                    className="font-semibold text-2xl cursor-pointer"
                     style={{ color: titleColors["3"] }}>
                     How much do you charge for a project
                   </p>
@@ -523,7 +479,7 @@ export default function Home() {
                 aria-label="Accordion 4"
                 title={
                   <p
-                    className="font-semibold"
+                    className="font-semibold text-2xl cursor-pointer"
                     style={{ color: titleColors["4"] }}>
                     Do you accept redesign projects
                   </p>
@@ -534,28 +490,44 @@ export default function Home() {
                   }
                 </p>
               </AccordionItem>
-
-              <AccordionItem
-                key="5"
-                aria-label="Accordion 5"
-                title={
-                  <p
-                    className="font-semibold"
-                    style={{ color: titleColors["5"] }}>
-                    What is your process for working with clients
-                  </p>
-                }>
-                <p className="text-[#848484]">
-                  {
-                    "Working closely with our clients, we're committed to delivering measurable results. We offer comprehensive services including branding, product development, cybersecurity.  In essence, we're your one-stop vision partner, transforming your business ideas into successful digital realities."
-                  }
-                </p>
-              </AccordionItem>
             </Accordion>
           </div>
         </div>
       </section>
+
       <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        style={{ backgroundImage: `url('/bgImg.svg')` }}
+        className="relative py-10 text-white flex mt-[100px] justify-center items-center">
+        {/* Dim Overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+
+        {/* Content */}
+        <div className="relative z-10 p-4 flex flex-col gap-4 justify-center text-center lg:w-1/2">
+          <h2 className="font-semibold text-4xl lg:text-5xl">
+            Your one-stop vision partner
+          </h2>
+          <p className="text-[#848484]">
+            ClevaHQ is a digital agency empowering visionary entrepreneurs,
+            startups, small businesses, and medium enterprises to launch, grow,
+            and scale their businesses from ideation to launch, and ultimately
+            market success.
+          </p>
+          <div>
+            <Button
+              onPress={() => router.push("/about")}
+              className="bg-[#DBFB8E] text-black rounded-md">
+              Contact Us
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* <section
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-delay="50"
@@ -595,7 +567,7 @@ export default function Home() {
           ))}
         </div>
         <div className=""></div>
-      </section>
+      </section> */}
     </>
   );
 }

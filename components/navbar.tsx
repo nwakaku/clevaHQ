@@ -2,12 +2,10 @@ import {
   Navbar as NextUINavbar,
   NavbarContent,
   NavbarMenu,
-  NavbarMenuToggle,
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
 import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
@@ -17,16 +15,8 @@ import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
-  SearchIcon,
-  Logo,
-} from "@/components/icons";
+import { SearchIcon } from "@/components/icons";
 import Image from "next/image";
-
 
 export const Navbar = () => {
   const searchInput = (
@@ -56,8 +46,7 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-4" href="/">
             {/* <Logo /> */}
-            <Image src={'/clevaLogo.svg'} width={120} height={120} alt="img" />
-            
+            <Image alt="img" height={120} src={"/clevaLogo.svg"} width={120} />
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -71,7 +60,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  "data-[active=true]:text-[#DBFB8E] data-[active=true]:font-medium"
                 )}
                 color="foreground"
                 href={item.href}>
@@ -83,11 +72,6 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        {/* <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
-        <ThemeSwitch /> */}
-        {/* <NavbarMenuToggle /> */}
         <p>Contact</p>
       </NavbarContent>
 
