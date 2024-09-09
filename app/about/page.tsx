@@ -9,7 +9,6 @@ import { Card, CardBody } from "@nextui-org/card";
 import { TypeAnimation } from "react-type-animation";
 
 export default function AboutPage() {
-  
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set(["1"])
   );
@@ -45,7 +44,6 @@ export default function AboutPage() {
 
     setTitleColors(newTitleColors);
   };
-
 
   return (
     <>
@@ -177,9 +175,9 @@ export default function AboutPage() {
                 key="1"
                 aria-label="Accordion 1"
                 title={
-                  <span style={{ color: titleColors["1"] }}>
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["1"] }}>
                     Client-Centric Approach
-                  </span>
+                  </h2>
                 }>
                 <p>
                   {
@@ -191,29 +189,37 @@ export default function AboutPage() {
                 key="2"
                 aria-label="Accordion 2"
                 title={
-                  <span style={{ color: titleColors["2"] }}>
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["2"] }}>
                     Innovative Solutions
-                  </span>
+                  </h2>
                 }>
-                {defaultContent}
+                <p>
+                  {
+                    "At ClevaHQ, our clients are at the heart of everything we do. We tailor our solutions to meet your specific needs and ensure your satisfaction every step of the way."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="3"
                 aria-label="Accordion 3"
                 title={
-                  <span style={{ color: titleColors["3"] }}>
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["3"] }}>
                     Exceptional Quality
-                  </span>
+                  </h2>
                 }>
-                {defaultContent}
+                <p>
+                  {
+                    "At ClevaHQ, our clients are at the heart of everything we do. We tailor our solutions to meet your specific needs and ensure your satisfaction every step of the way."
+                  }
+                </p>
               </AccordionItem>
               <AccordionItem
                 key="4"
                 aria-label="Accordion 4"
                 title={
-                  <span style={{ color: titleColors["4"] }}>
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["4"] }}>
                     Continuous Improvement
-                  </span>
+                  </h2>
                 }>
                 {defaultContent}
               </AccordionItem>
@@ -221,9 +227,9 @@ export default function AboutPage() {
                 key="5"
                 aria-label="Accordion 5"
                 title={
-                  <span style={{ color: titleColors["5"] }}>
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["5"] }}>
                     Agility and Adaptability
-                  </span>
+                  </h2>
                 }>
                 {defaultContent}
               </AccordionItem>
@@ -259,9 +265,9 @@ export default function AboutPage() {
                 key="1"
                 aria-label="Accordion 1"
                 title={
-                  <span style={{ color: titleColors["1"] }}>
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["1"] }}>
                     What are your core services as an Agency
-                  </span>
+                  </h2>
                 }>
                 <p>
                   {
@@ -273,9 +279,9 @@ export default function AboutPage() {
                 key="2"
                 aria-label="Accordion 2"
                 title={
-                  <span style={{ color: titleColors["2"] }}>
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["2"] }}>
                     Do you work with startups
-                  </span>
+                  </h2>
                 }>
                 {defaultContent}
               </AccordionItem>
@@ -283,9 +289,9 @@ export default function AboutPage() {
                 key="3"
                 aria-label="Accordion 3"
                 title={
-                  <span style={{ color: titleColors["3"] }}>
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["3"] }}>
                     How much do you charge for a project
-                  </span>
+                  </h2>
                 }>
                 {defaultContent}
               </AccordionItem>
@@ -293,9 +299,9 @@ export default function AboutPage() {
                 key="4"
                 aria-label="Accordion 4"
                 title={
-                  <span style={{ color: titleColors["4"] }}>
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["4"] }}>
                     Do you accept redesign projects
-                  </span>
+                  </h2>
                 }>
                 {defaultContent}
               </AccordionItem>
@@ -303,9 +309,9 @@ export default function AboutPage() {
                 key="5"
                 aria-label="Accordion 5"
                 title={
-                  <span style={{ color: titleColors["5"] }}>
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["5"] }}>
                     What is your process for working with clients
-                  </span>
+                  </h2>
                 }>
                 {defaultContent}
               </AccordionItem>
