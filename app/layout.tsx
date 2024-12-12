@@ -1,3 +1,5 @@
+// @ts-ignore
+/* eslint-disable */
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
@@ -49,7 +51,7 @@ export default function RootLayout({
               loop
               muted
               className="absolute top-0 left-0 w-full h-full object-cover">
-              <source src="/bgvideo.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/ddxcd04ok/video/upload/v1734002999/Bouncing_Ball_ClevaHQ_Website_Background_an7fek.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 

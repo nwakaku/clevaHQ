@@ -129,10 +129,7 @@ export default function Home() {
             <Card className="bg-transparent rounded-none border-none shadow-none">
               <CardBody>
                 <p>
-                  Unlock the true potential of your brand at ClevaHQ. We
-                  specialize in crafting enduring brand identities, designing
-                  immersive UI/UX experiences, and seamlessly transforming ideas
-                  into powerful digital solutions.
+                We help you brand, design, develop, and secure your <br /> business or product from concept to launch, ensuring a <br /> seamless journey to success
                 </p>
               </CardBody>
             </Card>
@@ -231,6 +228,22 @@ export default function Home() {
         <Button className="w-full lg:hidden block rounded-none bg-[#DBFB8E] my-4 text-black">
           Learn About Us
         </Button>
+
+              {/* add hover effect */}
+        <div className="p-8 w-full flex flex-col gap-8 justify-center items-center">
+              <div className="flex justify-between">
+                <div className="text flex-1">
+                  <h1 className="text-white text-5xl font-bold gap-2">Guided by Our <br /> Client's Vision </h1>
+                </div>
+                <div className="p text-white flex-1"> <h2>At the heart of our process is a commitment to our clients' vision. We harness innovative technologies and design principles to craft exceptional digital experiences that not only meet but exceed expectaions. Together, we transform ideas into impactful solutions</h2> </div>
+              </div>
+              <div className="images flex gap-3 mt-8">
+                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1733407915/Home_screen_project_display_yrskdz.png" className="w-[369px] h-auto" alt="" loading="lazy" />
+                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1733408259/Home_screen_project_display_1_pa3ypb.png" className="w-[369px] h-auto" alt="" loading="lazy" />
+                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1734006222/Rectangle_34624105_1_cjknl0.png" className="w-[369px] h-auto" alt="" loading="lazy" />
+              </div>
+            </div>
+
         <div className="w-full flex flex-col mt-[100px]">
           <h2 className="font-semibold text-3xl my-6 ">Services we Offer</h2>
 
@@ -312,7 +325,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
+      {/* <section
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-delay="50"
@@ -400,7 +413,7 @@ export default function Home() {
           </div>
         </div>
 
-      </section>
+      </section> */}
 
       <section
         data-aos="fade-up"
