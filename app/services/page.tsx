@@ -1,5 +1,7 @@
 "use client";
 
+import { Accordion, AccordionItem } from "@nextui-org/react";
+import type { Selection } from "@nextui-org/react";
 import React, { useEffect } from "react";
 import { title } from "@/components/primitives";
 import { Button } from "@nextui-org/button";
@@ -91,11 +93,10 @@ export default function AboutPage() {
             </div>
           </div>
           <Image
-            className="rounded-none p-2"
-            src={"/branding.svg"}
+            className="rounded-sm  p-2"
+            src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1734119184/branding_tcvyhs.jpg"
             alt="img"
             width={600}
-            height={600}
           />
         </div>
       </section>
@@ -125,10 +126,9 @@ export default function AboutPage() {
           </div>
           <Image
             alt="img"
-            className="rounded-none p-2"
-            height={600}
+            className="rounded-sm p-2"
             src={
-              "https://res.cloudinary.com/dgbreoalg/image/upload/v1725891148/Rectangle_10_dm8hq1.svg"
+              "https://res.cloudinary.com/ddxcd04ok/image/upload/v1734119839/Uxphone_kelbdu.jpg"
             }
             width={600}
           />
@@ -160,15 +160,14 @@ export default function AboutPage() {
             </div>
           </div>
           <Image
-            className="rounded-none p-2"
-            src={"/mobileapp.svg"}
+            className="rounded-sm p-2"
+            src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1734312578/Rectangle_10_bojkgc.jpg"
             alt="img"
             width={600}
-            height={600}
           />
         </div>
       </section>
-      <section className="flex items-start justify-center gap-4 p-4 mt-[100px] bg-[#0A0A0A]">
+      {/* <section className="flex items-start justify-center gap-4 p-4 mt-[100px] bg-[#0A0A0A]">
         <div className="grid lg:grid-cols-2 items-center justify-between gap-10 w-full  pb-10">
           <div className="flex flex-col gap-6 w-full justify-stretch">
             <div className="flex flex-col gap-6 w-full justify-stretch">
@@ -199,7 +198,91 @@ export default function AboutPage() {
             height={600}
           />
         </div>
-      </section>
+      </section> */}
+
+      {/* <section
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
+        className="flex items-start justify-center gap-4 pb-10">
+        <div className="grid lg:grid-cols-2 items-start gap-4 w-full">
+          <div className="inline-block max-w-lg justify-center flex-1">
+            <h1 className={title({ size: "sm" })}>
+              Curious Minds Want to Know
+            </h1>
+          </div>
+
+          <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
+            <Accordion
+              showDivider={false}
+              hideIndicator={true}
+              selectedKeys={selectedKeys}
+              className="w-full"
+              onSelectionChange={(keys) =>
+                handleSelectionChange(new Set(keys))
+              }>
+              <AccordionItem
+                key="1"
+                aria-label="Accordion 1"
+                title={
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["1"] }}>
+                    What are your core services as an Agency
+                  </h2>
+                }>
+                <p>
+                  {
+                    "Our seasoned team of senior UI/UX designers is dedicated to curating immersive digital experiences that empower brands to flourish in the contemporary landscape."
+                  }
+                </p>
+              </AccordionItem>
+              <AccordionItem
+                key="2"
+                aria-label="Accordion 2"
+                title={
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["2"] }}>
+                    Do you work with startups
+                  </h2>
+                }>
+                {defaultContent}
+              </AccordionItem>
+              <AccordionItem
+                key="3"
+                aria-label="Accordion 3"
+                title={
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["3"] }}>
+                    How much do you charge for a project
+                  </h2>
+                }>
+                {defaultContent}
+              </AccordionItem>
+              <AccordionItem
+                key="4"
+                aria-label="Accordion 4"
+                title={
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["4"] }}>
+                    Do you accept redesign projects
+                  </h2>
+                }>
+                {defaultContent}
+              </AccordionItem>
+              <AccordionItem
+                key="5"
+                aria-label="Accordion 5"
+                title={
+                  <h2 className="text-2xl font-semibold" style={{ color: titleColors["5"] }}>
+                    What is your process for working with clients
+                  </h2>
+                }>
+                {defaultContent}
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section> */}
+
+
       <section
         data-aos="fade-up"
         data-aos-offset="200"
