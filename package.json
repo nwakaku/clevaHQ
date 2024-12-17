@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo",
+	"preinstall": "corepack enable",
     "build": " yarn install --mode=update-lockfile && next build",
     "start": "next start",
     "lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
+  },
+  "engines": {
+    "yarn": "3.4.1"
   },
   "dependencies": {
     "@nextui-org/accordion": "^2.0.35",
@@ -62,5 +66,6 @@
     "tailwind-variants": "0.1.20",
     "tailwindcss": "3.4.3",
     "typescript": "5.0.4"
-  }
+  },
+  "packageManager": "yarn@4.5.3"
 }
