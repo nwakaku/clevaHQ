@@ -7,11 +7,15 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 import type { Selection } from "@nextui-org/react";
 import { Card, CardBody } from "@nextui-org/card";
 import { TypeAnimation } from "react-type-animation";
+import { useRouter } from "next/navigation";
+
 
 export default function Projects() {
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
     new Set(["1"])
   );
+
+  const router = useRouter()
 
   const [titleColors, setTitleColors] = React.useState<Record<string, string>>({
     "1": "#DBFB8E",
