@@ -48,7 +48,11 @@ export default function Projects() {
   return (
     <>
       <section
-        {...AOS_PROPS}
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
         className="flex items-center justify-between h-svh"
       >
         <div className="lg:grid lg:grid-cols-2 items-center">
@@ -71,7 +75,11 @@ export default function Projects() {
         </div>
       </section>
 
-      <section {...AOS_PROPS} className="flex items-start gap-4 pb-10">
+      <section data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false" className="flex items-start gap-4 pb-10">
         <div className="text-white">
           <h1 className={title({ size: "md" })}>Our projects</h1>
           <p className="text-xl">
@@ -99,7 +107,11 @@ export default function Projects() {
       </section>
 
       <section
-        {...AOS_PROPS}
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-once="false"
         style={{ backgroundImage: `url('/bgImg.svg')` }}
         className="relative py-10 text-white flex mt-[100px] justify-center items-center"
       >
