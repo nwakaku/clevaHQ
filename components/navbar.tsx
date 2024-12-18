@@ -1,101 +1,85 @@
-import {
-  Navbar as NextUINavbar,
-  NavbarContent,
-  NavbarMenu,
-  NavbarBrand,
-  NavbarItem,
-  NavbarMenuItem,
-} from "@nextui-org/navbar";
-import { Kbd } from "@nextui-org/kbd";
+import React from "react";
 import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
-import { link as linkStyles } from "@nextui-org/theme";
-import NextLink from "next/link";
-import clsx from "clsx";
-
-import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
-import { SearchIcon } from "@/components/icons";
+import { Button } from "@nextui-org/button";
 import Image from "next/image";
 
-export const Navbar = () => {
-  const searchInput = (
-    <Input
-      aria-label="Search"
-      classNames={{
-        inputWrapper: "bg-default-100",
-        input: "text-sm",
-      }}
-      endContent={
-        <Kbd className="hidden lg:inline-block" keys={["command"]}>
-          K
-        </Kbd>
-      }
-      labelPlacement="outside"
-      placeholder="Search..."
-      startContent={
-        <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-      }
-      type="search"
-    />
-  );
+const Navbar = () => {
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ];
 
   return (
-    <NextUINavbar maxWidth="xl" position="sticky" className="bg-transparent">
-      <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-        <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink className="flex justify-start items-center gap-4" href="/">
-            {/* <Logo /> */}
-            <Image alt="img" height={120} src={"/clevaLogo.svg"} width={120} />
-          </NextLink>
-        </NavbarBrand>
-      </NavbarContent>
+    <nav className="fixed top-0 w-full z-50 bg-black/50 backdrop-blur-md ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="text-2xl font-bold text-white">
+              <Image
+                alt="img"
+                height={120}
+                src={"/clevaLogo.svg"}
+                width={120}
+              />
+            </Link>
+          </div>
 
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
-        justify="end">
-        <ul className="hidden lg:flex gap-8 justify-start ml-2">
-          {siteConfig.navItems.map((item) => (
-            <NavbarItem key={item.href}>
-              <NextLink
-                className={clsx(
-                  linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-[#DBFB8E] data-[active=true]:font-medium"
-                )}
-                color="foreground"
-                href={item.href}>
-                {item.label}
-              </NextLink>
-            </NavbarItem>
-          ))}
-        </ul>
-      </NavbarContent>
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <div className="flex items-center space-x-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-gray-300 hover:text-[#DBFB8E] transition-colors duration-300 text-sm font-medium"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <p>Contact</p>
-      </NavbarContent>
+         
 
-      <NavbarMenu>
-        {searchInput}
-        <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? "danger"
-                      : "foreground"
-                }
-                href="#"
-                size="lg">
-                {item.label}
-              </Link>
-            </NavbarMenuItem>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <Button className="text-gray-300 hover:text-white" variant="light">
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu (hidden by default) */}
+      <div className="hidden md:hidden">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium"
+            >
+              {item.label}
+            </Link>
           ))}
         </div>
-      </NavbarMenu>
-    </NextUINavbar>
+      </div>
+    </nav>
   );
 };
+
+export default Navbar;

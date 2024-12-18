@@ -15,7 +15,7 @@ import "aos/dist/aos.css";
 
 // import CountUp from "react-countup";
 import { useRouter } from "next/navigation";
-import CountUp, { useCountUp } from "react-countup";
+import CountUp from "react-countup";
 
 import { title } from "@/components/primitives";
 
@@ -84,12 +84,6 @@ export default function Home() {
   //   return { shouldRepeat: true, delay: 2 };
   // };
 
-  useCountUp({
-    ref: "counter",
-    end: 1234567,
-    enableScrollSpy: true,
-    scrollSpyDelay: 1000,
-  });
 
   const router = useRouter();
 
@@ -105,7 +99,7 @@ export default function Home() {
         {/* Overlay */}
 
         {/* Content */}
-        <div className="relative z-10 grid lg:grid-cols-2 items-start mb-10">
+        <div className="relative z-10 grid lg:grid-cols-2 items-start mb-14">
           <div className="justify-center">
             <Card className="bg-transparent rounded-none border-none shadow-none">
               <CardBody>
@@ -129,7 +123,7 @@ export default function Home() {
             <Card className="bg-transparent rounded-none border-none shadow-none">
               <CardBody>
                 <p>
-                We help you brand, design, develop, and secure your <br /> business or product from concept to launch, ensuring a <br /> seamless journey to success
+                We help you brand, design, develop, and secure your business or product from concept to launch, ensuring a seamless journey to success
                 </p>
               </CardBody>
             </Card>
@@ -325,95 +319,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-once="false"
-        className="flex flex-col gap-6 mt-[100px] p-4 bg-[#0A0A0A]">
-        <div className="grid lg:grid-cols-2 items-center justify-between gap-8 w-full  pb-10">
-          <div className="flex flex-col gap-4 pb-10">
-            <h2 className={title({ size: "md" })}>Why choose ClevaHQ</h2>
-            <p className="text-sm hidden lg:block text-[#848484]">
-              Your vision is to make an impact through your business and to
-              succeed, you need a partner. One who sees what you see and is as
-              passionate as you in achieving it. ClevaHQ partners with you to
-              bring your innovative ideas to life, providing comprehensive
-              services that cover every aspect of your business journey.
-            </p>
-            <p className="text-sm block lg:hidden text-[#848484]">
-              Your vision is to make an impact through your business and to
-              succeed, you need a partner. One who sees what you see and is as
-              passionate as you in achieving it. ClevaHQ partners with you to
-              bring your innovative ideas to life, providing comprehensive
-              services that cover every aspect of your business journey.
-            </p>
-            <div className="flex flex-col gap-6 flex-1 w-full justify-stretch">
-              <Accordion
-                showDivider={false}
-                selectedKeys={selectedKeys}
-                hideIndicator={true}
-                className="w-full border-none"
-                onSelectionChange={handleSelectionChange}>
-                <AccordionItem
-                  key="1"
-                  aria-label="Accordion 1"
-                  title={
-                    <h3
-                      className="font-semibold text-3xl"
-                      style={{ color: titleColors["1"] }}>
-                      Client-Centric Approach
-                    </h3>
-                  }>
-                  <p className="text-sm text-[#848484]">
-                    At ClevaHQ, our clients are at the heart of everything we
-                    do. We tailor our solutions to meet your specific needs and
-                    ensure your satisfaction every step of the way.
-                  </p>
-                </AccordionItem>
-                <AccordionItem
-                  key="2"
-                  aria-label="Accordion 2"
-                  title={
-                    <h3
-                      className="font-semibold text-3xl"
-                      style={{ color: titleColors["2"] }}>
-                      Innovative Solutions
-                    </h3>
-                  }>
-                  <p className="text-sm text-[#848484]">
-                    At ClevaHQ, our clients are at the heart of everything we
-                    do. We tailor our solutions to meet your specific needs and
-                    ensure your satisfaction every step of the way.
-                  </p>
-                </AccordionItem>
-                <AccordionItem
-                  key="3"
-                  aria-label="Accordion 3"
-                  title={
-                    <h3
-                      className="font-semibold text-3xl"
-                      style={{ color: titleColors["3"] }}>
-                      Exceptional Quality
-                    </h3>
-                  }>
-                  <p className="text-sm text-[#848484]">
-                    At ClevaHQ, our clients are at the heart of everything we
-                    do. We tailor our solutions to meet your specific needs and
-                    ensure your satisfaction every step of the way.
-                  </p>
-                </AccordionItem>
-              </Accordion>
-            </div>
-          </div>
-          <div className="flex justify-center items-center">
-            {" "}
-            <Image src={whyImage} alt="img" width={400} height={400} />
-          </div>
-        </div>
-
-      </section> */}
+      
 
       <section
         data-aos="fade-up"
@@ -540,47 +446,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-once="false"
-        className="flex flex-col gap-10 mt-[100px]">
-        <div className="inline-block max-w-lg justify-center ">
-          <h1 className={title({ size: "sm" })}>Latest Articles</h1>
-        </div>
-        <div className="grid lg:grid-cols-3 sm:grid-cols-3 gap-10">
-          {siteConfig.dummyFounders.map((item, index) => (
-            <Card shadow="sm" key={index} className="rounded-none bg-[#0A0A0A]">
-              <CardBody className="overflow-visible p-3 ">
-                <Image
-                  height={10}
-                  width={10}
-                  className="w-fit"
-                  alt={item.title}
-                  src={item.img}
-                />
-              </CardBody>
-              <CardFooter className="flex flex-col items-start text-left space-y-3">
-                <p className="font-bold">{item.title}</p>
-                <p className="font-thin text-[#848484]"> {item.piece}</p>
-                <div className="flex items-center gap-3">
-                  <Image
-                    src={item.profilePic}
-                    className="rounded-full"
-                    alt="card"
-                    width={50}
-                    height={50}
-                  />
-                  <p className="text-default-500">{item.name}</p>
-                </div>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-        <div className=""></div>
-      </section> */}
+      
     </>
   );
 }

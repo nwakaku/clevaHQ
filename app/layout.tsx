@@ -9,7 +9,7 @@ import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
 import { mulish } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
+import  Navbar  from "@/components/navbar";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
