@@ -5,9 +5,9 @@ import { siteConfig } from "@/config/site";
 import type { Selection } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
 import { Card, CardBody, CardFooter } from "@nextui-org/card";
-import { Accordion, AccordionItem } from "@nextui-org/react";
+import { Accordion, AccordionItem, Chip, Image } from "@nextui-org/react";
+import { LuArrowUpRight } from "react-icons/lu";
 
-import Image from "next/image";
 import React, { useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import Aos from "aos";
@@ -84,6 +84,44 @@ export default function Home() {
   //   return { shouldRepeat: true, delay: 2 };
   // };
 
+  const images = [
+    {
+      src: "https://res.cloudinary.com/ddxcd04ok/image/upload/v1733407915/Home_screen_project_display_yrskdz.png",
+      topText: "Project Display",
+      bottomText: "Syreos",
+      bottomText2: "Business Banking App For Merchants Of All Sizes",
+    },
+    {
+      src: "https://res.cloudinary.com/ddxcd04ok/image/upload/v1733408259/Home_screen_project_display_1_pa3ypb.png",
+      topText: "Modern Layout",
+      bottomText: "Qwikserve",
+      bottomText2: "Mobile delivery application and services",
+    },
+    {
+      src: "https://res.cloudinary.com/ddxcd04ok/image/upload/v1734006222/Rectangle_34624105_1_cjknl0.png",
+      topText: "Visual Elements",
+      bottomText: "Reacher",
+      bottomText2: "A freemium Instant Messaging (IM) and Proprietary app",
+    },
+  ];
+
+  const stats = [
+    {
+      icon: "https://res.cloudinary.com/dgbreoalg/image/upload/v1725885193/experience_muxqmr.svg",
+      count: 5,
+      text: "Years of Expertise",
+    },
+    {
+      icon: "https://res.cloudinary.com/dgbreoalg/image/upload/v1725885304/pros_jcup1k.svg",
+      count: 20,
+      text: "Creative Pros",
+    },
+    {
+      icon: "https://res.cloudinary.com/dgbreoalg/image/upload/v1725885359/industry_rjlefa.svg",
+      count: 8,
+      text: "Industries Serviced",
+    },
+  ];
 
   const router = useRouter();
 
@@ -99,7 +137,7 @@ export default function Home() {
         {/* Overlay */}
 
         {/* Content */}
-        <div className="relative z-10 mt-auto grid lg:grid-cols-2 item-start space-x-24 ">
+        <div className="relative z-10 mt-auto grid lg:grid-cols-2 item-start lg:space-x-24 ">
           <div className="justify-center ">
             <Card className="bg-transparent rounded-none border-none shadow-none">
               <CardBody>
@@ -151,7 +189,7 @@ export default function Home() {
         data-aos-once="false"
         className="flex flex-col items-end justify-center gap-4 min-h-svh ">
         <div className="flex flex-col justify-center items-center ">
-          <div className="flex flex-col w-2/3 ">
+          <div className="flex flex-col lg:w-2/3 ">
             <div className="flex justify-center text-center  w-full">
               <h2 className={title({ size: "md" })}>
                 Holistic Advantage for <br />
@@ -168,56 +206,31 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between w-full p-4 mt-8">
-          <div className="flex gap-4">
-            <Image
-              alt="experience"
-              height={70}
-              src={
-                "https://res.cloudinary.com/dgbreoalg/image/upload/v1725885193/experience_muxqmr.svg"
-              }
-              width={70}
-            />
-            <div className="flex flex-col gap-2">
-              <h2 className="font-semibold text-[36px]">
-                <CountUp enableScrollSpy duration={3.2} end={5} /> +
-              </h2>
-              <p className=" text-[#848484]">Years of Expertise</p>
-            </div>
-          </div>
+        <div className="w-full max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            {stats.map((stat, index) => (
+              <div
+                key={index}
+                className="flex lg:flex-row flex-col  items-center justify-center lg:justify-start gap-6 p-4">
+                <div className="flex-shrink-0">
+                  <Image
+                    alt="stat icon"
+                    height={70}
+                    width={70}
+                    src={stat.icon}
+                    className="object-contain"
+                  />
+                </div>
 
-          <div className="flex gap-4">
-            <Image
-              alt="experience"
-              height={70}
-              src={
-                "https://res.cloudinary.com/dgbreoalg/image/upload/v1725885304/pros_jcup1k.svg"
-              }
-              width={70}
-            />
-            <div className="flex flex-col gap-2">
-              <h2 className="font-semibold text-[36px]">
-                <CountUp enableScrollSpy duration={3.2} end={20} />+{" "}
-              </h2>
-              <p className=" text-[#848484]">Creative Pros</p>
-            </div>
-          </div>
-
-          <div className="flex gap-4">
-            <Image
-              alt="experience"
-              height={70}
-              src={
-                "https://res.cloudinary.com/dgbreoalg/image/upload/v1725885359/industry_rjlefa.svg"
-              }
-              width={70}
-            />
-            <div className="flex flex-col gap-2">
-              <h2 className="font-semibold text-[36px]">
-                <CountUp enableScrollSpy end={8} duration={3.2} />+{" "}
-              </h2>
-              <p className=" text-[#848484]">Industries Serviced</p>
-            </div>
+                <div className="flex flex-col justify-center items-center gap-2">
+                  <h2 className="font-semibold text-4xl flex items-center">
+                    <CountUp enableScrollSpy duration={3.2} end={stat.count} />
+                    <span className="ml-1">+</span>
+                  </h2>
+                  <p className="text-[#848484] text-lg">{stat.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <Button className="w-full lg:hidden block rounded-none bg-[#DBFB8E] my-4 text-black">
@@ -226,7 +239,7 @@ export default function Home() {
 
         {/* add hover effect */}
         <div className="p-8 w-full flex flex-col gap-8 justify-center items-center">
-          <div className="flex justify-between">
+          <div className="flex lg:flex-row flex-col  lg:justify-between">
             <div className="text flex-1">
               <h1 className="text-white text-5xl font-bold gap-2">
                 Guided by Our <br /> Client's Vision{" "}
@@ -243,30 +256,61 @@ export default function Home() {
               </h2>{" "}
             </div>
           </div>
-          <div className="images flex gap-3 mt-8">
-            <img
-              src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1733407915/Home_screen_project_display_yrskdz.png"
-              className="w-[369px] h-auto"
-              alt=""
-              loading="lazy"
-            />
-            <img
-              src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1733408259/Home_screen_project_display_1_pa3ypb.png"
-              className="w-[369px] h-auto"
-              alt=""
-              loading="lazy"
-            />
-            <img
-              src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1734006222/Rectangle_34624105_1_cjknl0.png"
-              className="w-[369px] h-auto"
-              alt=""
-              loading="lazy"
-            />
+          <div className="flex flex-wrap gap-3 mt-8">
+            {images.map((image, index) => (
+              <div key={index} className="relative group cursor-pointer">
+                {/* Wrapper for the hover effects */}
+                <div className="relative">
+                  {/* Top text overlay */}
+                  <div className="absolute w-full text-center p-4 bg-black/75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 top-0 z-20">
+                    <div className="flex justify-between">
+                      <div className="flex gap-2">
+                        <p
+                          color="default"
+                          className="p-2 text-sm border-1 border-white/50 rounded-full">
+                          Business Banking
+                        </p>
+                        <p
+                          color="default"
+                          className="p-2 text-sm border-1 border-white/50 rounded-full">
+                          UI/UX Design
+                        </p>
+                      </div>
+
+                      <Button
+                        isIconOnly
+                        className="border-1 border-white/50 rounded-full bg-transparent ">
+                        <LuArrowUpRight />
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* NextUI Image */}
+                  <Image
+                    src={image.src}
+                    alt="Project image"
+                    className="w-[369px] h-auto"
+                    loading="lazy"
+                    isZoomed
+                  />
+
+                  {/* Bottom text overlay */}
+                  <div className="absolute w-full p-4 bg-black/75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 bottom-0 z-20">
+                    <div className="flex flex-col space-y-2">
+                      <h2 className="text-2xl font-semibold">
+                        {image.bottomText}
+                      </h2>
+                      <p className="text-sm font-normal">{image.bottomText2}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="w-full flex flex-col mt-[100px]">
-          <h2 className="font-semibold text-3xl my-6 ">Services we Offer</h2>
+          <h2 className="font-semibold text-5xl my-6 ">Services We Offer</h2>
 
           {/* Service Cards */}
           {[
@@ -274,33 +318,25 @@ export default function Home() {
               id: 1,
               title: "Branding",
               description:
-                "Your brand is your business's identity and expression to the world. At ClevaHQ, we help you create a distinctive and compelling brand that attracts more customers and drives revenue growth. Our expert team works closely with you to develop a brand that stands out, reflects your vision, and resonates with your target audience.",
-              imageSrc: "/brand.svg",
+                "Create a powerful essence around your brand—from its logo, colors, and typography to its overall identity. ClevaHQ helps you craft a compelling and subtle story about your business, values, and vision that resonates with your audience.",
+              imageSrc: "/brandinghq.svg",
               alt: "branding",
             },
             {
               id: 2,
               title: "UI/UX Design",
               description:
-                "A great product solves users’ problems efficiently and intuitively. At ClevaHQ, we design and develop digital products that offer streamlined and smooth user experiences. Our goal is to help you onboard more users and grow your revenue with platforms that cater to your audience’s needs.",
-              imageSrc: "/design.svg",
+                "Design is more than just how your app looks, it's how it feels and functions. At ClevaHQ, we craft UI/UX designs that are visually stunning and intuitively functional. Our goal is to create a seamless experience that captivates and engage users.",
+              imageSrc: "/freeiphone.svg",
               alt: "design",
             },
             {
               id: 3,
               title: "Development",
               description:
-                "Our web design and mobile development services combine creativity and functionality to produce visually striking websites and applications. Our commitment is to ensure that your website effectively communicates your brand message and enhances user retention.",
-              imageSrc: "/develop.svg",
+                "From high-converting websites to mobile apps, every touchpoint is scalable, reliable, and optimized for performance. We tailor our solutions to meet your specific needs, ensuring seamless integration and functionality.",
+              imageSrc: "/development.svg",
               alt: "development",
-            },
-            {
-              id: 4,
-              title: "Cybersecurity",
-              description:
-                "Beyond financial loss, your business legacy is at stake. Our comprehensive cybersecurity services protect your business from data breaches and fraudulent activities, ensuring your company’s credibility and legacy remain intact. Let us help you avoid losses and secure your future.",
-              imageSrc: "/cybersec.svg",
-              alt: "cybersecurity",
             },
           ].map((service) => (
             <div
@@ -355,7 +391,7 @@ export default function Home() {
         className="flex items-start justify-center gap-4 mt-[100px]">
         <div className="grid lg:grid-cols-2 items-start gap-4 w-full">
           <div className="inline-block max-w-lg justify-center flex-1">
-            <h2 className={title({ size: "lg" })}>
+            <h2 className={title({ size: "md" })}>
               Curious Minds <br /> Want to Know
             </h2>
           </div>
@@ -456,10 +492,9 @@ export default function Home() {
             Your one-stop vision partner
           </h2>
           <p className="text-[#848484]">
-            ClevaHQ is a digital agency empowering visionary entrepreneurs,
-            startups, small businesses, and medium enterprises to launch, grow,
-            and scale their businesses from ideation to launch, and ultimately
-            market success.
+            We are empowering visionary entrepreneurs, startups, small
+            businesses, and medium enterprises to launch, grow, and scale their
+            businesses from ideation to launch, and ultimately market success.
           </p>
           <div>
             <Button

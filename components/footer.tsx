@@ -7,29 +7,7 @@ import { Image } from "@nextui-org/react";
 const Footer = () => {
   return (
     <>
-      {/* <div
-        style={{ backgroundImage: `url('/bgImg.svg')` }}
-        className="py-20 text-white text-center flex flex-col items-center mt-[100px]">
-        <div className="lg:w-1/3 flex flex-col space-y-8 items-center lg:px-0 px-4">
-          <h3 className="font-semibold text-4xl lg:text-5xl">
-            Let&apos;s build greatness!
-          </h3>
-          <Link
-            href="mailto:ClevaHQ@gmail.com"
-            className="underline text-[#DBFB8E]">
-            ClevaHQ@gmail.com
-          </Link>
-          <p>
-            At ClevaHQ Agency, we understand that every business is unique.
-            That&apos;s why we offer tailored solutions that align with your
-            goals.
-          </p>
-          <Button className="w-fit rounded-none bg-[#DBFB8E] py-2 text-black">
-            Contact Us
-          </Button>
-        </div>
-      </div> */}
-      <footer className="w-full mt-[100px] flex flex-col items-center justify-center py-3 text-gray-500 container mx-auto max-w-7xl px-6 flex-grow">
+      <footer className="w-full mt-[100px] flex flex-col items-center justify-center py-3 text-gray-500 container mx-auto max-w-7xl px-6 flex-grow ">
         <div className="grid lg:grid-cols-4 items-stretch justify-stretch w-full">
           <div className="flex flex-col space-y-10 py-4  border-1 border-[#252525]">
             <div className="flex items-center justify-center  border-[#252525] border-b-1 py-6 ">
@@ -42,13 +20,13 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex flex-col space-y-10 p-4 border-1 border-[#252525]">
-            <div className="flex items-center pl-8 gap-3 border-[#252525] py-6">
-              CONNECT
+            <div className="flex items-center pl-8 gap-3 border-[#252525] py-6 ">
+              <h3 className="font-semibold">CONNECT</h3>
             </div>
             <div>
               <ul className="flex flex-col pl-8 gap-10">
-                <li>ClevaHQ@gmail.com</li>
-                <li>
+                <li className="underline">ClevaHQ@gmail.com</li>
+                <li className="underline">
                   No 4. St Elizbeth catholic church road, Kogo 1, Bwari, Abuja
                 </li>
               </ul>
@@ -56,7 +34,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col space-y-10 p-4 border-1 border-[#252525]">
             <div className="flex items-center pl-8 gap-3 border-[#252525] py-6">
-              LEGAL
+              <h3 className="font-semibold">LEGAL</h3>
             </div>
             <ul className="flex flex-col pl-8 gap-10">
               <li>Privacy Policies</li>
@@ -123,7 +101,7 @@ const Footer = () => {
           className="flex w-full justify-center items-center gap-1 text-current mt-10 border-t-1 border-[#252525] py-2"
           href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
           title="nextui.org homepage">
-          <span className="text-default-600">
+          <span className="text-default-600 text-sm">
             © All Rights Reserved. 2024,{" "}
           </span>
           <p className="text-default-600">ClevaHQ tech</p>
