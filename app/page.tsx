@@ -95,20 +95,22 @@ export default function Home() {
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-once="false"
-        className="relative flex items-end justify-center gap-4 h-svh pb-36">
+        className="relative flex flex-col justify-between items-end  h-svh mb-36 pb-2">
         {/* Overlay */}
 
         {/* Content */}
-        <div className="relative z-10 grid lg:grid-cols-2 items-end mb-14">
-          <div className="justify-center">
+        <div className="relative z-10 mt-auto grid lg:grid-cols-2 item-start space-x-24 ">
+          <div className="justify-center ">
             <Card className="bg-transparent rounded-none border-none shadow-none">
               <CardBody>
                 <h1 className={title({ size: "md" })}>
                   <TypeAnimation
                     sequence={[
-                      "Empower & secure Your Digital Presence",
+                      "We Shape Ideas Into Impactful Realities.",
                       1000,
-                      "Empower & secure Your Digital Identity",
+                      "We Bring Your Vision to Life with Innovation.",
+                      1000,
+                      "Transforming Concepts into Tangible Success.",
                       1000,
                     ]}
                     speed={50}
@@ -119,11 +121,13 @@ export default function Home() {
             </Card>
           </div>
 
-          <div className="flex flex-col gap-3 text-white">
+          <div className="flex flex-col gap-3 text-white ">
             <Card className="bg-transparent rounded-none border-none shadow-none">
               <CardBody>
                 <p>
-                We help you brand, design, develop, and secure your business or product from concept to launch, ensuring a seamless journey to success
+                  We help you brand, design, develop, and secure your business
+                  or product from concept to launch, ensuring a seamless journey
+                  to success
                 </p>
               </CardBody>
             </Card>
@@ -156,13 +160,10 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-[#848484] text-center">
-              ClevaHQ offers a unique blend of services that cover every aspect
-              of launching and growing a business. From business name
-              registration, branding, and trademarking, to UI/UX design, website
-              and mobile app development, and product scaling, ClevaHQ provides
-              an all-inclusive solution. We’re committed to delivering
-              measurable results through deep involvement in every stage of the
-              business lifecycle.
+              At ClevaHQ, we bring your idea to life with innovative approaches
+              to ensure it delivers on its purpose. From conception to market
+              success, we are committed to measurable outcomes at every stage of
+              product development.
             </p>
           </div>
         </div>
@@ -223,20 +224,46 @@ export default function Home() {
           Learn About Us
         </Button>
 
-              {/* add hover effect */}
+        {/* add hover effect */}
         <div className="p-8 w-full flex flex-col gap-8 justify-center items-center">
-              <div className="flex justify-between">
-                <div className="text flex-1">
-                  <h1 className="text-white text-5xl font-bold gap-2">Guided by Our <br /> Client's Vision </h1>
-                </div>
-                <div className="p text-white flex-1"> <h2>At the heart of our process is a commitment to our clients' vision. We harness innovative technologies and design principles to craft exceptional digital experiences that not only meet but exceed expectaions. Together, we transform ideas into impactful solutions</h2> </div>
-              </div>
-              <div className="images flex gap-3 mt-8">
-                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1733407915/Home_screen_project_display_yrskdz.png" className="w-[369px] h-auto" alt="" loading="lazy" />
-                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1733408259/Home_screen_project_display_1_pa3ypb.png" className="w-[369px] h-auto" alt="" loading="lazy" />
-                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1734006222/Rectangle_34624105_1_cjknl0.png" className="w-[369px] h-auto" alt="" loading="lazy" />
-              </div>
+          <div className="flex justify-between">
+            <div className="text flex-1">
+              <h1 className="text-white text-5xl font-bold gap-2">
+                Guided by Our <br /> Client's Vision{" "}
+              </h1>
             </div>
+            <div className="p text-white flex-1">
+              {" "}
+              <h2>
+                At the heart of our process is a commitment to our clients'
+                vision. We harness innovative technologies and design principles
+                to craft exceptional digital experiences that not only meet but
+                exceed expectaions. Together, we transform ideas into impactful
+                solutions
+              </h2>{" "}
+            </div>
+          </div>
+          <div className="images flex gap-3 mt-8">
+            <img
+              src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1733407915/Home_screen_project_display_yrskdz.png"
+              className="w-[369px] h-auto"
+              alt=""
+              loading="lazy"
+            />
+            <img
+              src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1733408259/Home_screen_project_display_1_pa3ypb.png"
+              className="w-[369px] h-auto"
+              alt=""
+              loading="lazy"
+            />
+            <img
+              src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1734006222/Rectangle_34624105_1_cjknl0.png"
+              className="w-[369px] h-auto"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+        </div>
 
         <div className="w-full flex flex-col mt-[100px]">
           <h2 className="font-semibold text-3xl my-6 ">Services we Offer</h2>
@@ -318,8 +345,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      
 
       <section
         data-aos="fade-up"
@@ -445,8 +470,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      
     </>
   );
 }
