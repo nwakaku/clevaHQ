@@ -99,7 +99,7 @@ export default function Home() {
         {/* Overlay */}
 
         {/* Content */}
-        <div className="relative z-10 grid lg:grid-cols-2 items-start mb-14">
+        <div className="relative z-10 grid lg:grid-cols-2 items-end mb-14">
           <div className="justify-center">
             <Card className="bg-transparent rounded-none border-none shadow-none">
               <CardBody>

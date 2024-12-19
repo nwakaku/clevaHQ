@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const Navbar = () => {
   const navItems = [
-    { label: "Home", href: "/" },
+    { label: "Projects", href: "/projects" },
     { label: "Services", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
+    { label: "Blog", href: "/blog" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
@@ -30,7 +30,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="flex items-center space-x-8">
+            <div className="flex items-center space-x-10">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -42,8 +42,6 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-
-         
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
