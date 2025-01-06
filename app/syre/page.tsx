@@ -5,8 +5,8 @@ const Syre = () => {
     <div>
       <main className='min-h-screen pt-28 bg-black flex justify-center items-center'>
         <div className="w-full max-w-7xl p-6 h-auto flex flex-col justify-between items-center space-y-12">
-          <div className="flex w-full justify-between items-start space-x-6">
-            <div className="right w-1/3 flex flex-col items-start gap-5">
+          <div className="flex w-full justify-between items-start space-x-6 lg:flex-row flex-col">
+            <div className="right lg:w-1/3 flex flex-col items-start gap-5">
               <h1 className="text-5xl sm:text-7xl text-white font-semibold">
                 Syreos
               </h1>
@@ -15,7 +15,7 @@ const Syre = () => {
               </p>
             </div>
 
-            <div className="left w-1/3 flex flex-col items-end gap-5">
+            <div className="left lg:w-1/3 flex flex-col items-end gap-5">
               <ul className="text-white">
                 <li>UI/UX Design</li>
                 <li>Interaction Design</li>

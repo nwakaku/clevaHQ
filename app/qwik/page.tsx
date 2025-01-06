@@ -91,7 +91,7 @@ const page = () => {
 
       <div className="w-full bg-[#0A0A0A] p-8 flex flex-col gap-6 justify-center items-center ">
         <p className="font-semibold text-[#DBFB8E] ">View next case study</p>
-        <h1 className=' text-5xl text-[#DBFB8E] ' >Qwikserve Delivery App</h1>
+        <h1 className=' text-5xl text-[#DBFB8E] ' >Reacher Messenger</h1>
       </div>
 
 

@@ -8,10 +8,10 @@ export default function  Reacher(){
           <div className="flex w-full justify-between items-start space-x-6">
             <div className="right w-1/3 flex flex-col items-start gap-5">
               <h1 className="text-5xl sm:text-7xl text-white font-semibold">
-                Syreos
+                Reacher
               </h1>
               <p className="text-lg sm:text-xl text-white">
-                Syreos is a business banking platform catering to merchants of all sizes in Nigeria. Syreos Business Banking offers simplified banking solutions designed to help businesses thrive.
+              Reacher is a business banking platform catering to merchants of all sizes in Nigeria. Reacher Business Banking offers simplified banking solutions designed to help business thrive
               </p>
             </div>
 
@@ -21,7 +21,7 @@ export default function  Reacher(){
                 <li>Interaction Design</li>
                 <li>
                   <a href="" className='text-[#DBFB8E] text-lg sm:text-xl font-semibold'>
-                    Syreos.com
+                    Reacher.com
                   </a>
                 </li>
               </ul>
@@ -29,7 +29,7 @@ export default function  Reacher(){
           </div>
 
           <div className="image mt-6 w-full max-w-4xl rounded-lg">
-            <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735886204/Rectangle_10_qghcjw.jpg" alt="Syreos Business Banking Platform" className='rounded-lg w-full object-cover' />
+            <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736028471/Screenshot_from_2025-01-04_22-59-33_vsifpa.png" alt="Syreos Business Banking Platform" className='rounded-lg w-full object-cover' />
           </div>
         </div>
       </main>
@@ -46,7 +46,7 @@ export default function  Reacher(){
         </div>
         
         <div className="image mt-6 w-full max-w-4xl rounded-lg">
-            <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735886204/Rectangle_10_qghcjw.jpg" alt="Syreos Business Banking Platform" className='rounded-lg w-full object-cover' />
+            <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027392/ReacherAbout_aaudjo.png" alt="Syreos Business Banking Platform" className='rounded-lg w-full object-cover' />
           </div>
      </div>
 
@@ -59,9 +59,9 @@ export default function  Reacher(){
         </div>
 
         <div className="w-full mt-7 flex flex-col md:flex-row items-center justify-evenly gap-4 ">
-          <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735892062/login_sz07gh.png" alt="" className='rounded-lg' loading='lazy' />
-          <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735892062/signup_xkhb9a.png" alt="" className='rounded-lg' loading='lazy' />
-          <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735892062/dashboard_pqaew6.png" alt="" className='rounded-lg' loading='lazy' />
+          <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027378/ReacherGroup_x4kqxh.png"  alt="" className='rounded-lg' loading='lazy' />
+          <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027378/ReacherGroup1_y1vdzx.png" alt="" className='rounded-lg' loading='lazy' />
+          <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027379/ReacherGroup3_g4z7pa.png" alt="" className='rounded-lg' loading='lazy' />
         </div>
       </div>
 
@@ -77,7 +77,7 @@ export default function  Reacher(){
         </div>
 
         <div className="image mt-6 w-full max-w-4xl rounded-lg">
-            <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735886204/Rectangle_10_qghcjw.jpg" alt="Syreos Business Banking Platform" className='rounded-lg w-full object-cover' />
+            <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027392/ReacherNeeds_lmener.png" alt="Syreos Business Banking Platform" className='rounded-lg w-full object-cover' />
           </div>
      </div>
 
@@ -90,21 +90,21 @@ export default function  Reacher(){
                 </p>
               </div>
 
-              <div className="w-full mt-7 flex flex-col md:flex-row items-center justify-evenly gap-4 ">
-                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735931982/Rectangle_22_qrpcpc.png" alt="" className='rounded-lg' loading='lazy' />
-                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735931982/Rectangle_21_pspjiu.png" alt="" className='rounded-lg' loading='lazy' />
-                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735931982/Rectangle_23_lgvqjv.png" alt="" className='rounded-lg' loading='lazy' />
+            <div className="w-full mt-7 flex flex-col md:flex-row items-center justify-evenly gap-4">
+                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027379/ReacherSol_liwpk8.png" alt="" className="rounded-lg" loading="lazy" />
+                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027378/ReacherSol1_dbwhcn.png" alt="" className="rounded-lg" loading="lazy" />
+                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027379/ReacherSol2_o5yqqh.png" alt="" className="rounded-lg" loading="lazy" />
               </div>
-              <div className="w-full mt-7 flex flex-col md:flex-row items-center justify-evenly gap-4 ">
-                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735931982/Rectangle_22_1_pxiebl.png" alt="" className='rounded-lg' loading='lazy' />
-                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735931982/Rectangle_21_1_wqkw58.png" alt="" className='rounded-lg' loading='lazy' />
-                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1735931982/Rectangle_23_1_y2e2tw.png" alt="" className='rounded-lg' loading='lazy' />
+              <div className="w-full mt-7 flex flex-col md:flex-row items-center justify-evenly gap-4">
+                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027379/ReacherSol3_kef1bt.png" alt="" className="rounded-lg" loading="lazy" />
+                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027380/ReacherSol4_ooz6ij.png" alt="" className="rounded-lg" loading="lazy" />
+                <img src="https://res.cloudinary.com/ddxcd04ok/image/upload/v1736027380/ReacherSol5_ta4lup.png" alt="" className="rounded-lg" loading="lazy" />
               </div>
-      </div>
+            </div>
 
       <div className="w-full bg-[#0A0A0A] p-8 flex flex-col gap-6 justify-center items-center ">
         <p className="font-semibold text-[#DBFB8E] ">View next case study</p>
-        <h1 className=' text-5xl text-[#DBFB8E] ' >Qwikserve Delivery App</h1>
+        <h1 className=' text-5xl text-[#DBFB8E] ' >SyreOS</h1>
       </div>
 
 
