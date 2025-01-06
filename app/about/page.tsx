@@ -7,6 +7,7 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 import type { Selection } from "@nextui-org/react";
 import { Card, CardBody } from "@nextui-org/card";
 import { TypeAnimation } from "react-type-animation";
+import Video from "@/components/Video";
 
 export default function AboutPage() {
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
@@ -47,6 +48,7 @@ export default function AboutPage() {
 
   return (
     <>
+    <Video/>
       <section
         data-aos="fade-up"
         data-aos-offset="200"

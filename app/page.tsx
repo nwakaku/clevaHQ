@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 import CountUp from "react-countup";
 
 import { title } from "@/components/primitives";
+import Video from "@/components/Video";
 
 export default function Home() {
   useEffect(() => {
@@ -127,6 +128,7 @@ export default function Home() {
 
   return (
     <>
+    <Video/>
       <section
         data-aos="fade-up"
         data-aos-offset="200"
