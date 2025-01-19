@@ -289,8 +289,9 @@ export default function Home() {
                   <Image
                     src={image.src}
                     alt="Project image"
-                    className="w-[369px] h-auto"
+                    className="w-[369px] h-auto "
                     loading="lazy"
+                    radius="none"
                     isZoomed
                   />
 
