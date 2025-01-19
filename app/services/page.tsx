@@ -11,6 +11,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { TypeAnimation } from "react-type-animation";
 import { useRouter } from "next/navigation";
+import Video from "@/components/Video";
 
 export default function AboutPage() {
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function AboutPage() {
 
   return (
     <>
+    <Video/>
       <section
         data-aos="fade-up"
         data-aos-offset="200"

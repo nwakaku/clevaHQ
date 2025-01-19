@@ -18,6 +18,8 @@ import { useRouter } from "next/navigation";
 import CountUp from "react-countup";
 
 import { title } from "@/components/primitives";
+import Video from "@/components/Video";
+import Link from "next/link";
 
 export default function Home() {
   useEffect(() => {
@@ -90,18 +92,21 @@ export default function Home() {
       topText: "Project Display",
       bottomText: "Syreos",
       bottomText2: "Business Banking App For Merchants Of All Sizes",
+      link: "/syre",
     },
     {
       src: "https://res.cloudinary.com/ddxcd04ok/image/upload/v1733408259/Home_screen_project_display_1_pa3ypb.png",
       topText: "Modern Layout",
       bottomText: "Qwikserve",
       bottomText2: "Mobile delivery application and services",
+      link: "/qwik",
     },
     {
       src: "https://res.cloudinary.com/ddxcd04ok/image/upload/v1734006222/Rectangle_34624105_1_cjknl0.png",
       topText: "Visual Elements",
       bottomText: "Reacher",
       bottomText2: "A freemium Instant Messaging (IM) and Proprietary app",
+      link: "/reacher",
     },
   ];
 
@@ -127,6 +132,7 @@ export default function Home() {
 
   return (
     <>
+      <Video />
       <section
         data-aos="fade-up"
         data-aos-offset="200"
@@ -280,7 +286,9 @@ export default function Home() {
                       <Button
                         isIconOnly
                         className="border-1 border-white/50 rounded-full bg-transparent ">
-                        <LuArrowUpRight />
+                        <Link href={image.link}>
+                          <LuArrowUpRight />
+                        </Link>
                       </Button>
                     </div>
                   </div>
