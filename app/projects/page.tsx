@@ -49,21 +49,21 @@ export default function Projects() {
 
   return (
     <>
-    {/* <Video/> */}
+      {/* <Video/> */}
       <section
         data-aos="fade-up"
         data-aos-offset="200"
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-once="false"
-        className="min-h-[66vh] flex flex-col justify-around py-12">
+        className="min-h-[66vh] flex flex-col justify-around py-12 mt-24">
         <div className="flex flex-row justify-between items-start">
           <div className="relative z-10 grid lg:grid-cols-2 gap-x-24">
             <div className="flex items-start">
               <Card className="bg-transparent border-none shadow-none">
                 <CardBody>
                   <h1 className={title({ size: "md" })}>
-                    Ideas once confined only to the imagination,
+                    Ideas once confined only to the imagination
                   </h1>
                 </CardBody>
               </Card>
@@ -87,7 +87,7 @@ export default function Projects() {
             color="default"
             variant="shadow"
             radius="full"
-            className="border-white hover:bg-[#DBFB8E]">
+            className="bg-[#DBFB8E] text-black">
             All works
           </Button>
           <Button
@@ -129,11 +129,12 @@ export default function Projects() {
         data-aos-once="false"
         className="flex items-start gap-4 pb-10">
         <div className="flex flex-col justify-between items-start ">
-          <div className="text-white">
+          <div className="text-white flex flex-col space-y-4">
             <h1 className={title({ size: "md" })}>Our projects</h1>
-            <p className="text-xl">
+            <p className="text-base text-gray-400">
               Explore our project gallery and witness the <br />
-              power of our designs, development, and branding <br /> solutions in action.
+              power of our designs, development, and branding <br /> solutions
+              in action.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 mt-8">
@@ -145,19 +146,20 @@ export default function Projects() {
                   <div className="absolute w-full text-center p-4 bg-black/75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 top-0 z-20">
                     <div className="flex justify-between">
                       <div className="flex gap-2">
-                        <p
+                        <span
                           color="default"
-                          className="p-2 text-sm border-1 border-white/50 rounded-full">
-                          Business Banking
-                        </p>
-                        <p
+                          className="p-2 flex justify-center items-center text-sm border-1 border-white/50 rounded-full">
+                          <p>Business Banking</p>
+                        </span>
+                        <span
                           color="default"
-                          className="p-2 text-sm border-1 border-white/50 rounded-full">
-                          UI/UX Design
-                        </p>
+                          className="p-2 flex justify-center items-center text-sm border-1 border-white/50 rounded-full">
+                          <p>UI/UX Design</p>
+                        </span>
                       </div>
 
-                      <Link href={image.link}
+                      <Link
+                        href={image.link}
                         className="border-1 p-4 border-white/50 rounded-full bg-transparent ">
                         <LuArrowUpRight />
                       </Link>
@@ -165,14 +167,15 @@ export default function Projects() {
                   </div>
 
                   {/* NextUI Image */}
-                  <Link href={image.link} >
-                  <Image
-                    src={image.src}
-                    alt="Project image"
-                    className="w-[369px] h-auto"
-                    loading="lazy"
-                    isZoomed
-                  />
+                  <Link href={image.link}>
+                    <Image
+                      src={image.src}
+                      alt="Project image"
+                      className="w-[369px] h-auto"
+                      loading="lazy"
+                      radius="none"
+                      isZoomed
+                    />
                   </Link>
 
                   {/* Bottom text overlay */}

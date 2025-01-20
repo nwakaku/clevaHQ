@@ -244,7 +244,7 @@ export default function Home() {
         </Button>
 
         {/* add hover effect */}
-        <div className="p-8 w-full flex flex-col gap-8 justify-center items-center">
+        <div className="p-8 mt-20 w-full flex flex-col gap-8 justify-center items-center">
           <div className="flex lg:flex-row flex-col  lg:justify-between">
             <div className="text flex-1">
               <h1 className="text-white text-5xl font-bold gap-2">
@@ -271,25 +271,23 @@ export default function Home() {
                   <div className="absolute w-full text-center p-4 bg-black/75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 top-0 z-20">
                     <div className="flex justify-between">
                       <div className="flex gap-2">
-                        <p
+                        <span
                           color="default"
-                          className="p-2 text-sm border-1 border-white/50 rounded-full">
-                          Business Banking
-                        </p>
-                        <p
+                          className="p-2 flex justify-center items-center text-sm border-1 border-white/50 rounded-full">
+                          <p>Business Banking</p>
+                        </span>
+                        <span
                           color="default"
-                          className="p-2 text-sm border-1 border-white/50 rounded-full">
-                          UI/UX Design
-                        </p>
+                          className="p-2 flex justify-center items-center text-sm border-1 border-white/50 rounded-full">
+                          <p>UI/UX Design</p>
+                        </span>
                       </div>
 
-                      <Button
-                        isIconOnly
-                        className="border-1 border-white/50 rounded-full bg-transparent ">
-                        <Link href={image.link}>
-                          <LuArrowUpRight />
-                        </Link>
-                      </Button>
+                      <Link
+                        href={image.link}
+                        className="border-1 p-4 border-white/50 rounded-full bg-transparent ">
+                        <LuArrowUpRight />
+                      </Link>
                     </div>
                   </div>
 
